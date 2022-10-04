@@ -6,7 +6,7 @@ interface HomePageProps {
   music: MusicTypes[];
 }
 
-const HomePage: NextPage<HomePageProps> = (/*{ music }*/) => {
+const HomePage: NextPage<HomePageProps> = () => {
   return (
     <Page
       title="Fabricio Gonzalez Diaz | Website"
