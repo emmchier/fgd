@@ -16,7 +16,7 @@ export const Page: FCC<PageTypes> = ({ children, title, description, keywords })
   const { asPath } = useRouter();
 
   return (
-    <section>
+    <>
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -41,6 +41,6 @@ export const Page: FCC<PageTypes> = ({ children, title, description, keywords })
         <meta property="og:image:height" content="630" />
       </Head>
       {children}
-    </section>
+    </>
   );
 };

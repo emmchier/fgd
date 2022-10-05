@@ -1,2 +1,1 @@
-export * from './ui/icons';
-export * from './ui/Page';
+export * from './ui';

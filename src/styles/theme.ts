@@ -1,37 +1,30 @@
 export const theme = {
   color: {
     primary: {
-      main: '#6957F0',
-      light: '#a185ff',
-      dark: '#272cbc',
+      main: '#7C5020',
     },
     secondary: {
-      main: '#7D31AE',
-      light: '#F2F0FE',
-      dark: '#3F349D',
+      main: '#C09C35',
+      light: {
+        1: '#FFE497',
+        2: '#EEDA9D',
+        3: '#FFF9CF',
+      },
     },
     text: {
-      primary: '#626161',
-      secondary: '#808080',
-      tag: '#6957F0',
+      primary: '#7C5020',
+      secondary: '#C19D35',
       error: '#EF4E1B',
       success: '#00A4A1',
     },
     gradient: {
-      primary:
-        'linear-gradient(68.08deg, rgba(178, 199, 244, 0.3) 30%, rgba(178, 199, 244, 0.3) 30%, rgba(233, 255, 255, 0.8) 80%);',
+      primary: 'linear-gradient(45deg, #FBE5A4 0%, rgba(251, 229, 164, 0) 100%);',
     },
-    background: {
-      primary: '#EDFFFF',
-      secondary: '#F2F0FE',
-      tag: '#E3EDFB',
-      copy: '#F3F1FF',
-    },
+    background: '#FEFBE7',
     disabled: '#DFDFDF',
     white: '#FFFFFF',
     black: '#2E2E2E',
     overlay: '#00000069',
-    hoverButton: '#ddfdfd',
   },
   font: {
     family: "'Montserrat', 'sans-serif'",

@@ -1,13 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
-  /* @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Yesteryear&display=swap'); */
   body,
   html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
+    overflow-y: hidden;
+    background: ${({ theme }) => theme.color.background};
     font-family: ${({ theme }) => theme.font.family};
     font-size: ${({ theme }) => theme.font.size.medium};
     line-height: ${({ theme }) => theme.font.lineHeight.medium};

@@ -1,5 +1,6 @@
 import type { NextPage, GetStaticProps } from 'next';
-import { Page } from '../components';
+import { Page, Hero } from '../components';
+import { Slider } from '../components/ui/slider/Slider';
 import { MusicTypes } from '../interfaces';
 
 interface HomePageProps {
@@ -13,7 +14,8 @@ const HomePage: NextPage<HomePageProps> = () => {
       description="Descripción"
       keywords="lala, lala, lala"
     >
-      <div>HomePage</div>
+      <Slider />
+      <Hero />
     </Page>
   );
 };

@@ -1,11 +1,11 @@
 import { FCC } from '../../types';
+import { Navbar } from '../ui';
 
 export const Layout: FCC = ({ children }) => {
   return (
     <main>
-      <div>HEADER</div>
       {children}
-      <div>NAVBAR</div>
+      <Navbar />
     </main>
   );
 };
