@@ -1,5 +1,5 @@
 import type { NextPage, GetStaticProps } from 'next';
-import { Page, Hero } from '../components';
+import { Page, Hero, Navbar } from '../components';
 import { Slider } from '../components/ui/slider/Slider';
 import { MusicTypes } from '../interfaces';
 
@@ -16,6 +16,7 @@ const HomePage: NextPage<HomePageProps> = () => {
     >
       <Slider />
       <Hero />
+      <Navbar />
     </Page>
   );
 };

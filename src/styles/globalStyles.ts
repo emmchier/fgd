@@ -19,7 +19,7 @@ export const GlobalStyles = createGlobalStyle`
   ul {
     padding: 0;
   }
-  p {
+  p, li {
     color: ${({ theme }) => theme.color.text.primary};
   }
   a {
