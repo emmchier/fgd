@@ -68,7 +68,7 @@ export const theme = {
   border: {
     radius: {
       small: '5px',
-      main: '8px',
+      main: '10px',
       full: '50px',
     },
   },

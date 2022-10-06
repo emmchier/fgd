@@ -13,7 +13,7 @@ const translateStyles = (move: string) =>
       transform: translateX(0);
     `,
     contact: css`
-      transform: translateX(-20%) !important;
+      transform: translateX(-15%) !important;
     `,
   }[move]);
 

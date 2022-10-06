@@ -1,8 +1,19 @@
 import styled from 'styled-components';
 
-export const Content = styled.div`
-  width: ${({ theme }) => theme.spacing(15)};
+type PropTypes = {
+  width: string;
+  height: string;
+  moveTo: string;
+  margin: string;
+  padding: string;
+};
+
+export const Content = styled.div<PropTypes>`
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
+  margin: ${({ margin }) => margin};
+  padding: ${({ padding }) => padding};
   border-radius: ${({ theme }) => theme.border.radius.main};
   background-color: ${({ theme }) => theme.color.primary.main};
-  height: 2px;
+  ${({ moveTo }) => `transform: translate${moveTo};`};
 `;
