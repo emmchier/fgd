@@ -60,11 +60,11 @@ export const theme = {
   spacing: (pixel: number) => `${0.25 * pixel}rem`,
   animation: (animate: any, lapse: string) =>
     css`
-      animation: ${animate} ${`${parseInt(lapse)}s`};
-      -webkit-animation: ${animate} ${`${parseInt(lapse)}s`};
-      -moz-animation: ${animate} ${`${parseInt(lapse)}s`};
-      -ms-animation: ${animate} ${`${parseInt(lapse)}s`};
-      -o-animation: ${animate} ${`${parseInt(lapse)}s`};
+      animation: ${animate} ${`${parseFloat(lapse)}s`};
+      -webkit-animation: ${animate} ${`${parseFloat(lapse)}s`};
+      -moz-animation: ${animate} ${`${parseFloat(lapse)}s`};
+      -ms-animation: ${animate} ${`${parseFloat(lapse)}s`};
+      -o-animation: ${animate} ${`${parseFloat(lapse)}s`};
     `,
   shadow: {
     main: `
