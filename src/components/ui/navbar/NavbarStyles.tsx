@@ -47,9 +47,13 @@ export const Item = styled.li<NavbarTypes>`
           }
         `
       : css`
-          a {
-            font-weight: ${({ theme }) => theme.font.weight.medium};
-            color: ${({ theme }) => theme.color.secondary.main};
+          span {
+            border: 1px solid transparent;
+
+            a {
+              font-weight: ${({ theme }) => theme.font.weight.medium};
+              color: ${({ theme }) => theme.color.secondary.main};
+            }
           }
         `};
 

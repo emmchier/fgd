@@ -7,6 +7,8 @@ export interface SliderState {
   homeActive: boolean;
   contactActive: boolean;
   bioActive: boolean;
+  loading: boolean;
+  response: number;
 }
 
 const INITIAL_STATE: SliderState = {
@@ -14,6 +16,8 @@ const INITIAL_STATE: SliderState = {
   homeActive: true,
   contactActive: false,
   bioActive: false,
+  loading: false,
+  response: 0,
 };
 
 export const SliderProvider: FCC = ({ children }) => {
@@ -23,10 +27,24 @@ export const SliderProvider: FCC = ({ children }) => {
   const onHomeActive = () => dispatch({ type: '[Slider] - homeActive' });
   const onContactActive = () => dispatch({ type: '[Slider] - contactActive' });
   const onBioActive = () => dispatch({ type: '[Slider] - bioActive' });
+  const showLoading = () => dispatch({ type: '[Slider] - showLoading' });
+  const hideLoading = () => dispatch({ type: '[Slider] - hideLoading' });
+  const showMessage = () => dispatch({ type: '[Slider] - showMessage' });
+  const hideMessage = () => dispatch({ type: '[Slider] - hideMessage' });
 
   return (
     <SliderContext.Provider
-      value={{ ...state, onMusicActive, onHomeActive, onContactActive, onBioActive }}
+      value={{
+        ...state,
+        onMusicActive,
+        onHomeActive,
+        onContactActive,
+        onBioActive,
+        showLoading,
+        hideLoading,
+        showMessage,
+        hideMessage,
+      }}
     >
       {children}
     </SliderContext.Provider>

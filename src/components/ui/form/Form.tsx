@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
 
 import { Form, Formik } from 'formik';
 import emailjs from '@emailjs/browser';
@@ -7,20 +7,11 @@ import * as Yup from 'yup';
 import { FormikField } from './FormikField';
 import { ButtonContainer, FormContent } from './FormStyles';
 import { Button } from '../button';
+import { SliderContext } from '../../../context';
 
-interface ContactFormPropTypes {
-  loading?: boolean;
-  setShowLoading: (e: boolean) => void;
-  setResponse: (e: number) => void;
-  setShowSnackbar: (e: boolean) => void;
-}
+export const ContactForm: FC = () => {
+  const { loading, showLoading, hideLoading, showMessage } = useContext(SliderContext);
 
-export const ContactForm: FC<ContactFormPropTypes> = ({
-  loading,
-  setShowLoading,
-  setResponse,
-  setShowSnackbar,
-}) => {
   const initialState = {
     userName: '',
     userEmail: '',
@@ -46,29 +37,30 @@ export const ContactForm: FC<ContactFormPropTypes> = ({
       initialValues={initialState}
       onSubmit={(values, { resetForm }) => {
         try {
-          setShowLoading(true);
+          showLoading();
           setTimeout(() => {
-            setResponse(200);
             resetForm();
+            hideLoading();
+            showMessage();
           }, 3000);
 
-          emailjs
-            .send(
-              process.env.EMAILJS_SERVICE_ID as string,
-              process.env.EMAILJS_TEMPLATE_ID as string,
-              values,
-              process.env.EMAILJS_PUBLIC_KEY as string
-            )
-            .then((res) => {
-              console.log(res);
-              if (res.status === 200) {
-                setResponse(res.status);
-                resetForm();
-              }
-            });
+          // emailjs
+          //   .send(
+          //     process.env.EMAILJS_SERVICE_ID as string,
+          //     process.env.EMAILJS_TEMPLATE_ID as string,
+          //     values,
+          //     process.env.EMAILJS_PUBLIC_KEY as string
+          //   )
+          //   .then((res) => {
+          //     console.log(res);
+          //     if (res.status === 200) {
+          //       setResponse();
+          //       resetForm();
+          //     }
+          //   });
         } catch {
-          setShowLoading(false);
-          setShowSnackbar(true);
+          hideLoading();
+          // setShowSnackbar(true);
         }
       }}
       validationSchema={Yup.object({

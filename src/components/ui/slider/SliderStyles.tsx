@@ -26,3 +26,16 @@ export const Section = styled.section<ItemTypes>`
           width: 0;
         `}
 `;
+
+export const FormContainer = styled.div`
+  width: 100%;
+  display: flex;
+
+  span {
+    width: 100%;
+  }
+
+  form {
+    width: 100%;
+  }
+`;

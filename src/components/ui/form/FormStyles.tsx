@@ -1,16 +1,14 @@
 import styled from 'styled-components';
 
 export const FormContent = styled.div`
-  width: 70%;
-
-  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-    width: 100%;
-  }
+  width: 100%;
+  margin-right: ${({ theme }) => theme.spacing(20)};
+  margin-left: ${({ theme }) => theme.spacing(70)};
 `;
 
 export const ButtonContainer = styled.div`
   display: flex;
-  margin-top: ${({ theme }) => theme.spacing(5)};
+  margin-top: ${({ theme }) => theme.spacing(0)};
 
   button:last-child {
     background: transparent;
@@ -36,7 +34,7 @@ export const ContentField = styled.div`
 
   input,
   textarea {
-    margin-bottom: ${({ theme }) => theme.spacing(10)};
+    margin-bottom: ${({ theme }) => theme.spacing(5)};
   }
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
@@ -46,7 +44,7 @@ export const ContentField = styled.div`
 
     input,
     textarea {
-      margin-bottom: ${({ theme }) => theme.spacing(5)};
+      margin-bottom: ${({ theme }) => theme.spacing(0)};
     }
   }
 `;
@@ -67,7 +65,7 @@ export const TextareaContainer = styled.span`
 `;
 
 export const InputContent = styled.div`
-  padding-bottom: ${({ theme }) => theme.spacing(5)};
+  padding-bottom: ${({ theme }) => theme.spacing(0)};
   width: 100%;
   &:focus-within label {
     color: ${({ theme }) => theme.color.primary.main};
@@ -166,4 +164,22 @@ export const TextareaLabel = styled.label`
   font-weight: ${({ theme }) => theme.font.weight.regular};
   font-size: ${({ theme }) => theme.font.size.small};
   color: ${({ theme }) => theme.color.black};
+`;
+
+export const SendedContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: ${({ theme }) => theme.color.text.primary};
+  transition: ${({ theme }) => theme.transition.main};
+
+  p {
+    font-size: ${({ theme }) => theme.font.size.medium};
+    margin-top: ${({ theme }) => theme.spacing(1)};
+    color: ${({ theme }) => theme.color.text.primary};
+  }
+
+  button {
+    margin-top: ${({ theme }) => theme.spacing(8)};
+  }
 `;

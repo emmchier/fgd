@@ -4,7 +4,12 @@ type SliderActionType =
   | { type: '[Slider] - musicActive' }
   | { type: '[Slider] - homeActive' }
   | { type: '[Slider] - contactActive' }
-  | { type: '[Slider] - bioActive' };
+  | { type: '[Slider] - bioActive' }
+  | { type: '[Slider] - showLoading' }
+  | { type: '[Slider] - hideLoading' }
+  | { type: '[Slider] - setResponse' }
+  | { type: '[Slider] - showMessage' }
+  | { type: '[Slider] - hideMessage' };
 
 export const sliderReducer = (state: SliderState, action: SliderActionType): SliderState => {
   switch (action.type) {
@@ -39,6 +44,26 @@ export const sliderReducer = (state: SliderState, action: SliderActionType): Sli
         homeActive: false,
         contactActive: false,
         bioActive: true,
+      };
+    case '[Slider] - showLoading':
+      return {
+        ...state,
+        loading: true,
+      };
+    case '[Slider] - hideLoading':
+      return {
+        ...state,
+        loading: false,
+      };
+    case '[Slider] - showMessage':
+      return {
+        ...state,
+        response: 200,
+      };
+    case '[Slider] - hideMessage':
+      return {
+        ...state,
+        response: 0,
       };
     default:
       return state;
