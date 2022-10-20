@@ -1,3 +1,5 @@
+import { css } from 'styled-components';
+
 export const theme = {
   color: {
     primary: {
@@ -56,6 +58,14 @@ export const theme = {
     },
   },
   spacing: (pixel: number) => `${0.25 * pixel}rem`,
+  animation: (animate: any, lapse: string) =>
+    css`
+      animation: ${animate} ${`${parseInt(lapse)}s`};
+      -webkit-animation: ${animate} ${`${parseInt(lapse)}s`};
+      -moz-animation: ${animate} ${`${parseInt(lapse)}s`};
+      -ms-animation: ${animate} ${`${parseInt(lapse)}s`};
+      -o-animation: ${animate} ${`${parseInt(lapse)}s`};
+    `,
   shadow: {
     main: `
               0px 0px 1px rgba(0, 0, 0, 0.04),

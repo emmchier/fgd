@@ -1,7 +1,6 @@
 import { FCC } from '../../types';
 
-import { Navbar } from '../ui';
-import { AsideInfo } from '../ui/aside-info/AsideInfo';
+import { Navbar, AsideInfo } from '../ui';
 
 export const Layout: FCC = ({ children }) => {
   return (

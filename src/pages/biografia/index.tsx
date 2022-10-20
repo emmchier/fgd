@@ -1,4 +1,5 @@
 import type { NextPage, GetStaticProps } from 'next';
+import { Page, PageTitle } from '../../components';
 
 interface BioPageProps {
   // bio: string;
@@ -6,9 +7,11 @@ interface BioPageProps {
 
 const BioPage: NextPage<BioPageProps> = (/*{ bio }*/) => {
   return (
-    <>
-      <div>BioPage</div>
-    </>
+    <Page title="Biografía" description="Descripción" keywords="lala, lala, lala">
+      <PageTitle>
+        <b>BIOGRAFÍA</b>
+      </PageTitle>
+    </Page>
   );
 };
 
