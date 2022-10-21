@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { Animation } from '../../../animation';
 import { ContactForm } from '../../../form';
 import { SendedMessage } from '../../../form/SendedMessage';
 import { Loading } from '../../../loading';
@@ -8,26 +9,33 @@ import { FormContainer } from '../../SliderStyles';
 interface ContactTypes {
   loading?: boolean;
   response?: number;
+  onLoad?: boolean;
 }
 
-export const Contact: FC<ContactTypes> = ({ loading, response }) => {
+export const Contact: FC<ContactTypes> = ({ loading, response, onLoad }) => {
   return (
     <>
-      <PageTitle>
-        <b>CONTACTO</b>
-      </PageTitle>
-      <FormContainer>
-        <span></span>
-        {loading === true ? (
-          <>
-            <Loading loading={loading} />
-          </>
-        ) : response === 0 ? (
-          <ContactForm />
-        ) : (
-          <SendedMessage />
-        )}
-      </FormContainer>
+      {onLoad === true && (
+        <>
+          <Animation lapse={onLoad === true ? '2.5' : '0'}>
+            <PageTitle>
+              <b>CONTACTO</b>
+            </PageTitle>
+          </Animation>
+          <FormContainer>
+            <span></span>
+            {loading === true ? (
+              <>
+                <Loading loading={loading} />
+              </>
+            ) : response === 0 ? (
+              <ContactForm />
+            ) : (
+              <SendedMessage />
+            )}
+          </FormContainer>
+        </>
+      )}
     </>
   );
 };
