@@ -32,7 +32,6 @@ export const LoadingContent = styled.div<ContentPropTypes>`
         `}
 
   h5 {
-    font-size: ${({ theme }) => theme.font.size.largeX};
     margin-top: ${({ theme }) => theme.spacing(8)} !important;
   }
 `;

@@ -1,150 +1,225 @@
 import styled, { css } from 'styled-components';
 
 interface ButtonI {
-  color?: 'primary' | 'secondary';
-  variant?: 'contained' | 'outlined' | 'text';
+  variant?: 'contained' | 'outlined' | 'ghost' | 'text' | 'icon';
+  size?: 'small' | 'medium';
   fullWidth?: boolean;
   ariaLabel?: string;
   iconRight?: boolean;
   iconLeft?: boolean;
 }
 
-const colorStyles = (color: string) =>
+const sizeStyles = (size: string) =>
   ({
-    primary: css`
-      color: ${({ theme }) => theme.color.text.primary};
-      background-color: ${({ theme }) => theme.color.primary.main};
-      border: 2px solid ${({ theme }) => theme.color.primary.main};
+    small: css`
+      // paddings 0.625rem(10px) left-right + 0.5rem(8px) top-bottom
+      font-size: ${({ theme }) => theme.font.body[3].size};
+      line-height: ${({ theme }) => theme.font.body[3].lineHeight};
+      padding: ${({ theme }) => `${theme.spacing(1)} ${theme.spacing(3)}`};
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
     `,
-    secondary: css`
-      color: ${({ theme }) => theme.color.text.secondary};
-      background-color: ${({ theme }) => theme.color.secondary.main};
-      border: 2px solid ${({ theme }) => theme.color.secondary.main};
+    medium: css`
+      // paddings 1.5rem(24px) left-right + 0.625rem(10px) top-bottom
+      font-size: ${({ theme }) => theme.font.body[2].size};
+      line-height: ${({ theme }) => theme.font.body[2].lineHeight};
+      padding: ${({ theme }) => `${theme.spacing(2)} ${theme.spacing(6)}`};
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
     `,
-  }[color]);
+  }[size]);
 
 const variantStyles = (variant: string) =>
   ({
     contained: css`
-      color: ${({ theme }) => theme.color.white};
+      background: ${({ theme }) => theme.color.gradient.main};
+      border: 1.5px solid ${({ theme }) => theme.color.primary.main};
+
       &:hover {
-        background-color: ${({ theme }) => theme.color.primary.main};
-        border: 2px solid ${({ theme }) => theme.color.primary.main};
+        background: ${({ theme }) => theme.color.gradient.dark};
       }
+
+      &:focus,
       &:active {
-        background-color: ${({ theme }) => theme.color.primary.main};
-        border: 2px solid ${({ theme }) => theme.color.primary.main};
+        background: ${({ theme }) => theme.color.primary.dark};
       }
+
       &:disabled {
-        border: 2px solid ${({ theme }) => theme.color.disabled};
-        background-color: ${({ theme }) => theme.color.disabled};
-        color: ${({ theme }) => theme.color.text.secondary};
+        background: ${({ theme }) => theme.color.background.light};
+        border: 2px solid transparent;
       }
 
       @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
         &:hover,
+        &:focus,
         &:active {
-          background-color: ${({ theme }) => theme.color.primary.main};
-          border: 2px solid ${({ theme }) => theme.color.primary.main};
+          background: ${({ theme }) => theme.color.gradient.main};
         }
       }
 
       @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
         &:hover,
+        &:focus,
         &:active {
-          background-color: ${({ theme }) => theme.color.primary.main};
-          border: 2px solid ${({ theme }) => theme.color.primary.main};
+          background: ${({ theme }) => theme.color.gradient.main};
         }
       }
     `,
     outlined: css`
-      background-color: transparent;
+      background: transparent;
+      border: 1.5px solid ${({ theme }) => theme.color.primary.main};
+
       &:hover {
-        background-color: ${({ theme }) => theme.color.primary.main};
-        color: ${({ theme }) => theme.color.white};
+        background: ${({ theme }) => theme.color.background.light};
       }
+
+      &:focus,
       &:active {
-        border: 2px solid ${({ theme }) => theme.color.primary.main};
-        background-color: ${({ theme }) => theme.color.primary.main};
+        background: ${({ theme }) => theme.color.background.dark};
       }
+
       &:disabled {
-        opacity: 0.5;
-        background-color: transparent;
-        color: ${({ theme }) => theme.color.text.primary};
+        background: transparent;
+        border: 1.5px solid ${({ theme }) => theme.color.background.light};
       }
 
       @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
         &:hover,
+        &:focus,
         &:active {
-          border: 2px solid ${({ theme }) => theme.color.primary.main};
-          background-color: transparent;
-          color: ${({ theme }) => theme.color.primary.main};
+          background: transparent;
         }
       }
 
       @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
         &:hover,
+        &:focus,
         &:active {
-          border: 2px solid ${({ theme }) => theme.color.primary.main};
-          background-color: transparent;
-          color: ${({ theme }) => theme.color.primary.main};
+          background: transparent;
+        }
+      }
+    `,
+    ghost: css`
+      background: transparent;
+      border: 1.5px solid transparent;
+
+      &:hover {
+        background: ${({ theme }) => theme.color.background.light};
+      }
+
+      &:focus,
+      &:active {
+        background: ${({ theme }) => theme.color.background.dark};
+      }
+
+      @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+        &:hover,
+        &:focus,
+        &:active {
+          color: ${({ theme }) => theme.color.secondary.dark};
+          background: transparent;
+          border: 1.5px solid transparent;
+        }
+      }
+
+      @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+        &:hover,
+        &:focus,
+        &:active {
+          color: ${({ theme }) => theme.color.secondary.dark};
+          background: transparent;
+          border: 1.5px solid transparent;
         }
       }
     `,
     text: css`
-      background-color: transparent;
-      border: 2px solid transparent;
-      padding: 0;
-      color: ${({ theme }) => theme.color.black} !important;
-
-      svg {
-        filter: brightness(0) saturate(100%) invert(37%) sepia(62%) saturate(1324%)
-          hue-rotate(221deg) brightness(91%) contrast(107%) !important;
-      }
+      padding: none;
 
       &:hover {
+        color: ${({ theme }) => theme.color.black};
         svg {
           filter: brightness(0) saturate(100%) invert(37%) sepia(62%) saturate(1324%)
             hue-rotate(221deg) brightness(91%) contrast(107%) !important;
         }
       }
 
+      &:focus,
       &:active {
-        color: ${({ theme }) => theme.color.black};
-      }
-
-      &:disabled {
-        color: ${({ theme }) => theme.color.disabled};
-
-        span {
-          &:after {
-            border: 1px solid ${({ theme }) => theme.color.disabled};
-          }
-
-          &:hover:after {
-            transform: scaleX(1);
-          }
-        }
-
-        p {
-          color: ${({ theme }) => theme.color.disabled};
+        color: #000000;
+        svg {
+          filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(7462%)
+            hue-rotate(132deg) brightness(94%) contrast(108%);
         }
       }
 
       @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
         &:hover,
+        &:focus,
         &:active {
-          color: ${({ theme }) => theme.color.primary.main};
-          text-decoration: none;
+          color: ${({ theme }) => theme.color.secondary.dark};
+          background: transparent;
         }
       }
 
       @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
         &:hover,
+        &:focus,
         &:active {
-          color: ${({ theme }) => theme.color.primary.main};
-          text-decoration: none;
+          color: ${({ theme }) => theme.color.secondary.dark};
+          background: transparent;
         }
+      }
+    `,
+    icon: css`
+      border-radius: ${({ theme }) => theme.border.radius.full};
+
+      &:hover {
+        background: ${({ theme }) => theme.color.background.light};
+      }
+
+      &:focus,
+      &:active {
+        background: ${({ theme }) => theme.color.background.dark};
+      }
+
+      @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+        &:hover,
+        &:focus,
+        &:active {
+          background: transparent;
+        }
+      }
+
+      @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+        &:hover,
+        &:focus,
+        &:active {
+          background: transparent;
+        }
+      }
+    `,
+    nav: css`
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: ${({ theme }) => theme.color.secondary.main};
+      background: ${({ theme }) => theme.color.background.light};
+      font-size: ${({ theme }) => theme.font.body[4].size};
+      line-height: ${({ theme }) => theme.font.body[4].lineHeight};
+      font-weight: ${({ theme }) => theme.font.weight.medium};
+      padding: ${({ theme }) => theme.spacing(2)};
+
+      svg {
+        margin-bottom: ${({ theme }) => theme.spacing(1)};
+        filter: brightness(0) saturate(100%) invert(32%) sepia(39%) saturate(750%)
+          hue-rotate(351deg) brightness(95%) contrast(94%);
       }
     `,
   }[variant]);
@@ -155,31 +230,33 @@ export const ButtonContent = styled.button<ButtonI>`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border: none;
   width: ${({ fullWidth }) => (fullWidth ? '100%' : 'auto')};
-  color: ${({ theme }) => theme.color.white};
-  padding: ${({ theme }) => `${theme.spacing(2)} ${theme.spacing(6)}`};
-  font-size: ${({ theme }) => theme.font.size.small};
-  line-height: ${({ theme }) => theme.font.lineHeight.medium};
-  ${({ color }) => colorStyles(color as any)};
-  ${({ variant }) => variantStyles(variant as any)};
   transition: 0.2s ease-in-out;
   font-family: ${({ theme }) => theme.font.family};
+  border-radius: ${({ theme }) => theme.border.radius.small};
+  font-weight: ${({ theme }) => theme.font.weight.bold};
+  color: ${({ theme }) => theme.color.secondary.dark};
+  ${({ variant }) => variantStyles(variant as any)};
+  ${({ size }) => sizeStyles(size as any)};
+
+  svg {
+    filter: brightness(0) saturate(100%) invert(19%) sepia(15%) saturate(4545%) hue-rotate(4deg)
+      brightness(93%) contrast(95%);
+  }
 
   &:hover,
+  &:focus,
   &:active {
     transition: 0.2s ease-in-out;
-
-    svg {
-      filter: brightness(0) invert(1);
-    }
   }
+
   &:disabled {
+    color: ${({ theme }) => theme.color.secondary.light};
     cursor: inherit;
 
     svg {
-      filter: brightness(0) saturate(100%) invert(37%) sepia(62%) saturate(1324%) hue-rotate(221deg)
-        brightness(91%) contrast(107%) !important;
+      filter: brightness(0) saturate(100%) invert(66%) sepia(10%) saturate(1282%) hue-rotate(350deg)
+        brightness(88%) contrast(88%);
     }
   }
 
@@ -189,10 +266,5 @@ export const ButtonContent = styled.button<ButtonI>`
 
   i:nth-child(2) {
     margin-left: ${({ iconLeft }) => (iconLeft ? '10px' : '0')};
-  }
-
-  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-    font-size: ${({ theme }) => theme.font.size.small};
-    line-height: ${({ theme }) => theme.font.lineHeight.small};
   }
 `;

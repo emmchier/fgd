@@ -21,19 +21,19 @@ export const Contact: FC<ContactTypes> = ({ loading, response, onLoad }) => {
             <PageTitle>
               <b>CONTACTO</b>
             </PageTitle>
+            <FormContainer>
+              <span></span>
+              {loading === true ? (
+                <>
+                  <Loading loading={loading} />
+                </>
+              ) : response === 0 ? (
+                <ContactForm />
+              ) : (
+                <SendedMessage />
+              )}
+            </FormContainer>
           </Animation>
-          <FormContainer>
-            <span></span>
-            {loading === true ? (
-              <>
-                <Loading loading={loading} />
-              </>
-            ) : response === 0 ? (
-              <ContactForm />
-            ) : (
-              <SendedMessage />
-            )}
-          </FormContainer>
         </>
       )}
     </>

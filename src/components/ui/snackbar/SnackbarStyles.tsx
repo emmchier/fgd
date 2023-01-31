@@ -94,8 +94,6 @@ export const SnackbarContent = styled.div<SnackbarProps>`
           z-index: 99999 !important;
           transform: translateY(0);
         `};
-  ${({ position }) => positionStyles(position)};
-  ${({ background }) => backgroundStyles(background)};
   transition: all 0.2s ease-in-out;
   position: fixed;
   margin: ${({ theme }) => theme.spacing(10)};
@@ -106,11 +104,14 @@ export const SnackbarContent = styled.div<SnackbarProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid ${({ theme }) => theme.color.disabled};
+  border: 1px solid ${({ theme }) => theme.color.gray};
+  ${({ position }) => positionStyles(position)};
+  ${({ background }) => backgroundStyles(background)};
 
   p {
     margin: 0 ${({ theme }) => theme.spacing(5)};
-    font-size: ${({ theme }) => theme.font.size.small};
+    font-size: ${({ theme }) => theme.font.body[1].size};
+    line-height: ${({ theme }) => theme.font.body[1].lineHeight};
   }
 
   a {
@@ -120,7 +121,6 @@ export const SnackbarContent = styled.div<SnackbarProps>`
   @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
     p {
       max-width: 50%;
-      line-height: ${({ theme }) => theme.font.lineHeight.smallX};
     }
   }
 

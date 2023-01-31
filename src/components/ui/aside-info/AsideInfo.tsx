@@ -1,6 +1,8 @@
-import Link from 'next/link';
 import React from 'react';
 import { FCC } from '../../../types';
+
+import Link from 'next/link';
+
 import { DisandevBrand } from '../icons';
 import { Line } from '../line';
 import { SocialMedia, SocialMediaContainer } from '../social-media';
@@ -31,9 +33,9 @@ export const AsideInfo: FCC = ({ children }) => {
         </SocialMediaContainer>
         <span>
           <div>
-            <Link href="/politicas-de-calidad">Políticas</Link>
+            <Link href="/politicas-de-calidad">Políticas de Calidad</Link>
             <Link href="/cookies">Cookies</Link>
-            <p>{new Date().getFullYear()} © F. G. D.</p>
+            <p>{new Date().getFullYear()} © Fabricio Gonzalez Diaz</p>
             <Line width="150px" height="2px" />
           </div>
         </span>

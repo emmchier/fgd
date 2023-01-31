@@ -1,11 +1,11 @@
 import { FCC } from '../../../types';
 
-import { Heading, Line } from '../../ui';
+import { Heading } from '../../ui';
 
 import { PageTitleContent } from './PageTitleStyles';
 
 interface PageTitleProps {
-  variant?: string;
+  variant?: 'h1' | 'h2';
 }
 
 export const PageTitle: FCC<PageTitleProps> = ({ children, variant = 'h2' }) => {

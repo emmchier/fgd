@@ -1,40 +1,51 @@
 import { FCC } from '../../../types';
-import { Title1, Title2, Title3, Title4, Title5, Title6, HeadingContent } from './HeadingStyles';
+import {
+  Heading1,
+  Heading2,
+  Heading3,
+  Heading4,
+  Heading5,
+  Heading6,
+  HeadingContent,
+} from './HeadingStyles';
 
 interface HeadingTypes {
-  variant?: string;
-  weight?: string;
   color?: string;
-  cap?: string;
+  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  size?: 'title1' | 'title2' | 'title3';
+  weight?: 'regular' | 'medium' | 'semiBold' | 'bold' | 'extraBold';
+  cap?: 'default' | 'upper' | 'lower' | 'cap';
 }
 
 export const Heading: FCC<HeadingTypes> = ({
   children,
-  variant = 'h2',
+  variant = 'h1',
+  size = 'title1',
   weight = 'medium',
   cap = 'default',
 }) => {
-  const setHeading = () => {
+  const setVariant = () => {
     switch (variant) {
       case 'h1':
-        return <Title1>{children}</Title1>;
+        return <Heading1>{children}</Heading1>;
       case 'h2':
-        return <Title2>{children}</Title2>;
+        return <Heading2>{children}</Heading2>;
       case 'h3':
-        return <Title3>{children}</Title3>;
+        return <Heading3>{children}</Heading3>;
       case 'h4':
-        return <Title4>{children}</Title4>;
+        return <Heading4>{children}</Heading4>;
       case 'h5':
-        return <Title5>{children}</Title5>;
+        return <Heading5>{children}</Heading5>;
       case 'h6':
-        return <Title6>{children}</Title6>;
+        return <Heading6>{children}</Heading6>;
       default:
-        return <Title3>{children}</Title3>;
+        return <Heading3>{children}</Heading3>;
     }
   };
+
   return (
-    <HeadingContent variant={variant} weight={weight} cap={cap}>
-      {setHeading()}
+    <HeadingContent variant={variant} size={size} weight={weight} cap={cap}>
+      {setVariant()}
     </HeadingContent>
   );
 };

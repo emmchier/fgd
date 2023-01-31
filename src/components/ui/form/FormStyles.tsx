@@ -13,7 +13,7 @@ export const ButtonContainer = styled.div`
   button:last-child {
     background: transparent;
     border: 1px solid transparent;
-    color: ${({ theme }) => theme.color.text.primary};
+    color: ${({ theme }) => theme.color.secondary.dark};
 
     &:hover {
       color: ${({ theme }) => theme.color.black};
@@ -39,7 +39,8 @@ export const ContentField = styled.div`
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     label {
-      font-size: ${({ theme }) => theme.font.size.smallX};
+      font-size: ${({ theme }) => theme.font.body[3].size};
+      line-height: ${({ theme }) => theme.font.body[3].size};
     }
 
     input,
@@ -50,7 +51,7 @@ export const ContentField = styled.div`
 `;
 
 export const Error = styled.p`
-  color: ${({ theme }) => theme.color.text.error};
+  color: ${({ theme }) => theme.color.error};
   position: absolute;
   bottom: 0;
   right: 0;
@@ -79,8 +80,8 @@ export const InputField = styled.input`
   padding-left: ${({ theme }) => theme.spacing(5)};
   font-style: normal;
   font-weight: ${({ theme }) => theme.font.weight.regular};
-  font-size: ${({ theme }) => theme.font.size.small};
-  line-height: ${({ theme }) => theme.spacing(10)};
+  font-size: ${({ theme }) => theme.font.body[1].size};
+  line-height: ${({ theme }) => theme.font.body[1].lineHeight};
   padding: 0;
   background-color: ${({ theme }) => theme.color.white};
   border: transparent;
@@ -100,7 +101,8 @@ export const Label = styled.label`
   padding: 0;
   font-style: normal;
   font-weight: ${({ theme }) => theme.font.weight.regular};
-  font-size: ${({ theme }) => theme.font.size.small};
+  font-size: ${({ theme }) => theme.font.body[3].size};
+  line-height: ${({ theme }) => theme.font.body[3].lineHeight};
   color: ${({ theme }) => theme.color.black};
 `;
 
@@ -121,7 +123,8 @@ export const TextareaField = styled.textarea`
   color: ${({ theme }) => theme.color.black};
   font-style: normal;
   font-weight: ${({ theme }) => theme.font.weight.regular};
-  font-size: ${({ theme }) => theme.font.size.small};
+  font-size: ${({ theme }) => theme.font.body[1].size};
+  line-height: ${({ theme }) => theme.font.body[1].size};
   background-color: ${({ theme }) => theme.color.white};
   border: none;
   border-bottom: 2px solid ${({ theme }) => theme.color.black};
@@ -140,11 +143,11 @@ export const TextareaField = styled.textarea`
   }
   ::-webkit-scrollbar-thumb {
     border-radius: ${({ theme }) => theme.spacing(5)};
-    background-color: ${({ theme }) => theme.color.disabled};
+    background: transparent;
     cursor: pointer;
   }
   ::-webkit-scrollbar-thumb:window-inactive {
-    background-color: ${({ theme }) => theme.color.disabled};
+    background: transparent;
     cursor: pointer;
   }
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
@@ -162,7 +165,8 @@ export const TextareaLabel = styled.label`
   padding: 0;
   font-style: normal;
   font-weight: ${({ theme }) => theme.font.weight.regular};
-  font-size: ${({ theme }) => theme.font.size.small};
+  font-size: ${({ theme }) => theme.font.body[3].size};
+  line-height: ${({ theme }) => theme.font.body[3].size};
   color: ${({ theme }) => theme.color.black};
 `;
 
@@ -170,13 +174,14 @@ export const SendedContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: ${({ theme }) => theme.color.text.primary};
+  color: ${({ theme }) => theme.color.secondary.dark};
   transition: ${({ theme }) => theme.transition.main};
 
   p {
-    font-size: ${({ theme }) => theme.font.size.medium};
+    font-size: ${({ theme }) => theme.font.body[1].size};
+    line-height: ${({ theme }) => theme.font.body[1].size};
     margin-top: ${({ theme }) => theme.spacing(1)};
-    color: ${({ theme }) => theme.color.text.primary};
+    color: ${({ theme }) => theme.color.secondary.dark};
   }
 
   button {

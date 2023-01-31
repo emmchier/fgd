@@ -19,7 +19,7 @@ const translateStyles = (move: string) =>
 
 export const Content = styled.div<PropTypes>`
   img {
-    ${({ move }) => translateStyles(move as string)};
+    ${({ move }) => translateStyles(move)};
     transform: translateX(0);
     transition: all 0.5s ease-in-out;
   }

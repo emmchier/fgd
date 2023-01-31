@@ -3,7 +3,7 @@ import { FCC } from '../../../types';
 
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { Content } from './PageStyles';
+import { PageContent } from './PageStyles';
 import { Animation } from '../animation';
 
 interface PageTypes {
@@ -19,7 +19,7 @@ export const Page: FCC<PageTypes> = ({ children, title, description, keywords })
 
   return (
     <Animation>
-      <Content>
+      <PageContent>
         <Head>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,7 +44,7 @@ export const Page: FCC<PageTypes> = ({ children, title, description, keywords })
           <meta property="og:image:height" content="630" />
         </Head>
         {children}
-      </Content>
+      </PageContent>
     </Animation>
   );
 };

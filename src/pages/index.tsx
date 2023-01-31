@@ -1,4 +1,4 @@
-import type { NextPage, GetStaticProps } from 'next';
+import type { NextPage } from 'next';
 import { Page, Hero } from '../components';
 import { Slider } from '../components/ui/slider/Slider';
 import { MusicTypes } from '../interfaces';
@@ -19,15 +19,5 @@ const HomePage: NextPage<HomePageProps> = () => {
     </Page>
   );
 };
-
-// export const getStaticProps: GetStaticProps = async (ctx) => {
-//   const data = await axios.get<ResponseType>('endpoint');
-
-//   return {
-//     props: {
-//       prop: data,
-//     },
-//   };
-// };
 
 export default HomePage;

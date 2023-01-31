@@ -13,8 +13,6 @@ interface SliderTypes {
 export const Slider: FC<SliderTypes> = ({ songList = [] }) => {
   const { homeActive, contactActive, musicActive, loading, response } = useContext(SliderContext);
 
-  console.log(musicActive, homeActive, contactActive);
-
   return (
     <Content>
       <SliderItem active={musicActive}>

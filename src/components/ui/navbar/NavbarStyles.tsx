@@ -28,7 +28,6 @@ export const Nav = styled.nav`
 `;
 
 export const Item = styled.li<NavbarTypes>`
-  font-size: ${({ theme }) => theme.font.size.small};
   font-weight: ${({ theme }) => theme.font.weight.medium};
   position: relative;
 

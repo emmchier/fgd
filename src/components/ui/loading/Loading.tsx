@@ -16,9 +16,7 @@ export const Loading: FC<PropTypes> = ({ loading = false }) => {
           <div></div>
           <div></div>
         </span>
-        <Heading variant="h5" weight="light">
-          Enviando...
-        </Heading>
+        <Heading variant="h5">Enviando...</Heading>
       </AnimationContainer>
     </LoadingContent>
   );

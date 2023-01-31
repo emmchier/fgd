@@ -4,11 +4,7 @@ import Image from 'next/image';
 import { Content } from './styles';
 import { SliderContext } from '../../../context';
 
-interface HeroProps {
-  //   prop: type;
-}
-
-export const Hero: FC<HeroProps> = () => {
+export const Hero: FC = () => {
   const { musicActive, homeActive, contactActive } = useContext(SliderContext);
 
   const onItemActive = () => {
