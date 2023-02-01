@@ -1,8 +1,11 @@
+import { useContext, useEffect } from 'react';
+
 import type { NextPage, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
-import { useContext, useEffect } from 'react';
-import { Page, PageTitle } from '../../components';
+
 import { SliderContext } from '../../context';
+
+import { Page, PageTitle } from '../../components';
 
 interface SingingHousesProps {
   // bio: string;

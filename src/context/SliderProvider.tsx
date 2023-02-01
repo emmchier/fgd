@@ -12,6 +12,7 @@ export interface SliderState {
   singingActive: boolean;
   loading: boolean;
   response: number;
+  banner: boolean;
 }
 
 const INITIAL_STATE: SliderState = {
@@ -24,6 +25,7 @@ const INITIAL_STATE: SliderState = {
   singingActive: false,
   loading: false,
   response: 0,
+  banner: true,
 };
 
 export const SliderProvider: FCC = ({ children }) => {
@@ -36,10 +38,12 @@ export const SliderProvider: FCC = ({ children }) => {
   const onCookiesActive = () => dispatch({ type: '[Slider] - cookiesActive' });
   const onPolicyActive = () => dispatch({ type: '[Slider] - policyActive' });
   const onSingingActive = () => dispatch({ type: '[Slider] - singingActive' });
-  const showLoading = () => dispatch({ type: '[Slider] - showLoading' });
-  const hideLoading = () => dispatch({ type: '[Slider] - hideLoading' });
-  const showMessage = () => dispatch({ type: '[Slider] - showMessage' });
-  const hideMessage = () => dispatch({ type: '[Slider] - hideMessage' });
+  const showLoading = () => dispatch({ type: '[Loading] - showLoading' });
+  const hideLoading = () => dispatch({ type: '[Loading] - hideLoading' });
+  const showMessage = () => dispatch({ type: '[SendedMessage] - showMessage' });
+  const hideMessage = () => dispatch({ type: '[SendedMessage] - hideMessage' });
+  const showBanner = () => dispatch({ type: '[Banner] - showBanner' });
+  const hideBanner = () => dispatch({ type: '[Banner] - hideBanner' });
 
   return (
     <SliderContext.Provider
@@ -56,6 +60,8 @@ export const SliderProvider: FCC = ({ children }) => {
         hideLoading,
         showMessage,
         hideMessage,
+        showBanner,
+        hideBanner,
       }}
     >
       {children}

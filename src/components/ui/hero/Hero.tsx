@@ -1,8 +1,10 @@
 import React, { FC, useContext } from 'react';
 
 import Image from 'next/image';
-import { Content } from './styles';
+
 import { SliderContext } from '../../../context';
+
+import { HeroContent } from './HeroStyles';
 
 export const Hero: FC = () => {
   const { musicActive, homeActive, contactActive } = useContext(SliderContext);
@@ -16,7 +18,7 @@ export const Hero: FC = () => {
   };
 
   return (
-    <Content move={onItemActive()}>
+    <HeroContent move={onItemActive()}>
       <Image
         src={'/assets/home-hero-desk.png' || '/images/default-bg.svg'}
         alt="Fabricio sentado tocando su guitarra"
@@ -24,6 +26,6 @@ export const Hero: FC = () => {
         objectFit="contain"
         priority
       />
-    </Content>
+    </HeroContent>
   );
 };

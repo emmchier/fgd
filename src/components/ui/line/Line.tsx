@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { Content } from './styles';
+import { LineContent } from './LineStyles';
 
 interface LineTypes {
   width?: string;
@@ -16,4 +16,6 @@ export const Line: FC<LineTypes> = ({
   moveTo = '(0, 0)',
   margin = '0',
   padding = '0',
-}) => <Content width={width} height={height} moveTo={moveTo} margin={margin} padding={padding} />;
+}) => (
+  <LineContent width={width} height={height} moveTo={moveTo} margin={margin} padding={padding} />
+);

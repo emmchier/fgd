@@ -1,6 +1,8 @@
 import { FCC } from '../../../types';
-import { Content } from './AnimationStyles';
+
 import { fadeIn } from '../../../styles';
+
+import { AnimationContent } from './AnimationStyles';
 
 interface AnimationProps {
   animate?: any;
@@ -8,7 +10,7 @@ interface AnimationProps {
 }
 
 export const Animation: FCC<AnimationProps> = ({ children, animate = fadeIn, lapse = '0.5' }) => (
-  <Content animate={animate} lapse={lapse}>
+  <AnimationContent animate={animate} lapse={lapse}>
     {children}
-  </Content>
+  </AnimationContent>
 );

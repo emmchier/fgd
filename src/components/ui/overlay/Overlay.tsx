@@ -1,4 +1,5 @@
 import React, { FC, useEffect } from 'react';
+
 import { OverlayContent } from './OverlayStyles';
 
 type Props = {

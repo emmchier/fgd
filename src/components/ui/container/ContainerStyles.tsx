@@ -50,7 +50,7 @@ const styledSizes = (size: string) =>
     `,
   }[size]);
 
-export const Content = styled.div<ContainerProps>`
+export const ContainerContent = styled.div<ContainerProps>`
   width: auto;
   ${({ size }) => styledSizes(size)};
 `;

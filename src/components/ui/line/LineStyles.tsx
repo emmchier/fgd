@@ -8,7 +8,7 @@ type PropTypes = {
   padding: string;
 };
 
-export const Content = styled.div<PropTypes>`
+export const LineContent = styled.div<PropTypes>`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
   margin: ${({ margin }) => margin};

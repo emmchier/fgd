@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 
 export const FormContent = styled.div`
-  width: 100%;
-  margin-right: ${({ theme }) => theme.spacing(20)};
-  margin-left: ${({ theme }) => theme.spacing(70)};
+  width: 50%;
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    width: 100%;
+    margin: 0;
+  }
 `;
 
 export const ButtonContainer = styled.div`

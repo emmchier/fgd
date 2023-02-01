@@ -1,4 +1,7 @@
 import { FCC } from '../../../types';
+
+import { SpotifyIcon } from '../../../components';
+
 import { ButtonContent } from './ButtonStyles';
 
 interface ButtonTypes {
@@ -10,6 +13,7 @@ interface ButtonTypes {
   disabled?: boolean;
   iconRight?: boolean;
   iconLeft?: boolean;
+  icon?: React.ReactNode;
   onClick?: (e: any) => any;
 }
 
@@ -23,6 +27,7 @@ export const Button: FCC<ButtonTypes> = ({
   ariaLabel = '',
   iconRight = false,
   iconLeft = false,
+  icon = <SpotifyIcon />,
   onClick,
 }) => (
   <ButtonContent
@@ -36,6 +41,8 @@ export const Button: FCC<ButtonTypes> = ({
     iconLeft={iconLeft}
     onClick={onClick}
   >
+    {iconLeft && icon}
     {children}
+    {iconRight && icon}
   </ButtonContent>
 );

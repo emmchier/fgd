@@ -19,5 +19,14 @@ export const SongsContent = styled.div`
     position: fixed;
     bottom: 0;
     background: linear-gradient(11.78deg, #fefbe7 55.72%, rgba(254, 251, 231, 0) 81.34%);
+
+    @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    width: 100%;
+    margin: 0;
   }
 `;

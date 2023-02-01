@@ -1,9 +1,13 @@
 import React, { FC } from 'react';
-import { Animation } from '../../../animation';
-import { ContactForm } from '../../../form';
-import { SendedMessage } from '../../../form/SendedMessage';
-import { Loading } from '../../../loading';
-import { PageTitle } from '../../../section-title';
+
+import {
+  ContactForm,
+  SendedMessage,
+  Animation,
+  Loading,
+  PageTitle,
+} from '../../../../../components';
+
 import { FormContainer } from '../../SliderStyles';
 
 interface ContactTypes {
@@ -18,9 +22,8 @@ export const Contact: FC<ContactTypes> = ({ loading, response, onLoad }) => {
       {onLoad === true && (
         <>
           <Animation lapse={onLoad === true ? '2.5' : '0'}>
-            <PageTitle>CONTACTO</PageTitle>
+            <PageTitle>Contacto</PageTitle>
             <FormContainer>
-              <span></span>
               {loading === true ? (
                 <>
                   <Loading loading={loading} />

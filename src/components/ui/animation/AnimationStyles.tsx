@@ -5,7 +5,7 @@ interface PropTypes {
   lapse: string;
 }
 
-export const Content = styled.div<PropTypes>`
+export const AnimationContent = styled.div<PropTypes>`
   width: 100%;
   height: 100%;
   ${({ theme, animate, lapse }) => theme.animation(animate, lapse)};

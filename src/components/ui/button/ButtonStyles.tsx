@@ -207,25 +207,7 @@ const variantStyles = (variant: string) =>
         }
       }
     `,
-    nav: css`
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      border: none;
-      color: ${({ theme }) => theme.color.secondary.main};
-      background: ${({ theme }) => theme.color.background.light};
-      font-size: ${({ theme }) => theme.font.body[4].size} !important;
-      line-height: ${({ theme }) => theme.font.body[4].lineHeight} !important;
-      font-weight: ${({ theme }) => theme.font.weight.medium};
-      padding: ${({ theme }) => theme.spacing(1.5)} !important;
-
-      svg {
-        margin-bottom: ${({ theme }) => theme.spacing(1)};
-        filter: brightness(0) saturate(100%) invert(32%) sepia(39%) saturate(750%)
-          hue-rotate(351deg) brightness(95%) contrast(94%);
-      }
-    `,
+    nav: css``,
   }[variant]);
 
 export const ButtonContent = styled.button<ButtonProps>`
@@ -264,11 +246,11 @@ export const ButtonContent = styled.button<ButtonProps>`
     }
   }
 
-  i:nth-child(1) {
+  svg:nth-child(1) {
     margin-right: ${({ iconRight }) => (iconRight ? '10px' : '0')};
   }
 
-  i:nth-child(2) {
+  svg:nth-child(2) {
     margin-left: ${({ iconLeft }) => (iconLeft ? '10px' : '0')};
   }
 `;

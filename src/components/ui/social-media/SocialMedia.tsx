@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
 
 import { socialMediaList } from '../../../domain';
-import { Button } from '../button';
+
+import { Button } from '../../../components';
 
 import { SocialMediaContent } from './SocialMediaStyles';
 

@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
-import { Heading } from '../heading';
+
+import { Heading } from '../../../components';
 
 import { AnimationContainer, LoadingContent } from './LoadingStyles';
 

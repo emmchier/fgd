@@ -1,8 +1,10 @@
 import React, { FC } from 'react';
+
 import { useField } from 'formik';
 
+import { Input, Textarea } from '../../../components';
+
 import { ContentField, Error, TextareaContainer } from './FormStyles';
-import { Input, Textarea } from './';
 
 interface PropTypes {
   label: string;

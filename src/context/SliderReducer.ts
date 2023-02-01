@@ -8,11 +8,13 @@ type SliderActionType =
   | { type: '[Slider] - cookiesActive' }
   | { type: '[Slider] - policyActive' }
   | { type: '[Slider] - singingActive' }
-  | { type: '[Slider] - showLoading' }
-  | { type: '[Slider] - hideLoading' }
+  | { type: '[Loading] - showLoading' }
+  | { type: '[Loading] - hideLoading' }
   | { type: '[Slider] - setResponse' }
-  | { type: '[Slider] - showMessage' }
-  | { type: '[Slider] - hideMessage' };
+  | { type: '[SendedMessage] - showMessage' }
+  | { type: '[SendedMessage] - hideMessage' }
+  | { type: '[Banner] - showBanner' }
+  | { type: '[Banner] - hideBanner' };
 
 export const sliderReducer = (state: SliderState, action: SliderActionType): SliderState => {
   switch (action.type) {
@@ -93,25 +95,35 @@ export const sliderReducer = (state: SliderState, action: SliderActionType): Sli
         cookiesActive: false,
         policyActive: false,
       };
-    case '[Slider] - showLoading':
+    case '[Loading] - showLoading':
       return {
         ...state,
         loading: true,
       };
-    case '[Slider] - hideLoading':
+    case '[Loading] - hideLoading':
       return {
         ...state,
         loading: false,
       };
-    case '[Slider] - showMessage':
+    case '[SendedMessage] - showMessage':
       return {
         ...state,
         response: 200,
       };
-    case '[Slider] - hideMessage':
+    case '[SendedMessage] - hideMessage':
       return {
         ...state,
         response: 0,
+      };
+    case '[Banner] - showBanner':
+      return {
+        ...state,
+        banner: true,
+      };
+    case '[Banner] - hideBanner':
+      return {
+        ...state,
+        banner: false,
       };
     default:
       return state;

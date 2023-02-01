@@ -4,10 +4,11 @@ import { Form, Formik } from 'formik';
 import emailjs from '@emailjs/browser';
 import * as Yup from 'yup';
 
-import { FormikField } from './FormikField';
-import { ButtonContainer, FormContent } from './FormStyles';
-import { Button } from '../button';
 import { SliderContext } from '../../../context';
+
+import { Button, FormikField } from '../../../components';
+
+import { ButtonContainer, FormContent } from './FormStyles';
 
 export const ContactForm: FC = () => {
   const { loading, showLoading, hideLoading, showMessage } = useContext(SliderContext);

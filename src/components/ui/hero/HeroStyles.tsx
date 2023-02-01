@@ -17,7 +17,7 @@ const translateStyles = (move: string) =>
     `,
   }[move]);
 
-export const Content = styled.div<PropTypes>`
+export const HeroContent = styled.div<PropTypes>`
   img {
     ${({ move }) => translateStyles(move)};
     transform: translateX(0);

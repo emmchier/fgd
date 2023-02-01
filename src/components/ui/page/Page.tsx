@@ -3,8 +3,10 @@ import { FCC } from '../../../types';
 
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+
+import { Animation } from '../../../components';
+
 import { PageContent } from './PageStyles';
-import { Animation } from '../animation';
 
 interface PageTypes {
   title: string;

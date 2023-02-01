@@ -4,7 +4,7 @@ type ItemTypes = {
   expand: boolean;
 };
 
-export const Content = styled.div`
+export const SliderContent = styled.div`
   width: 100%;
   display: flex;
   margin: 0;
@@ -12,7 +12,7 @@ export const Content = styled.div`
   height: 100vh;
 `;
 
-export const Section = styled.section<ItemTypes>`
+export const ExpandibleSection = styled.section<ItemTypes>`
   transform: translate3d(0, 0, 0);
   overflow: hidden;
   transition: width 0.5s ease;
@@ -21,19 +21,25 @@ export const Section = styled.section<ItemTypes>`
     expand === true
       ? css`
           width: 100%;
+
+          @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+            display: block;
+          }
         `
       : css`
           width: 0;
+
+          @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+            display: none;
+          }
         `}
 `;
 
 export const FormContainer = styled.div`
   width: 100%;
   display: flex;
-
-  span {
-    width: 100%;
-  }
+  align-items: center;
+  justify-content: flex-end;
 
   form {
     width: 100%;

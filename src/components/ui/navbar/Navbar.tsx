@@ -1,10 +1,21 @@
 import React, { FC, useContext } from 'react';
 
 import { useRouter } from 'next/router';
+
 import { SliderContext } from '../../../context';
-import { NavbarItem } from './NavbarItem';
-import { Content, Nav } from './NavbarStyles';
-import { Container } from '../container';
+
+import {
+  NavbarItem,
+  Container,
+  ContactIcon,
+  HomeIcon,
+  MusicIcon,
+  BioIcon,
+  Powered,
+  Copyright,
+} from '../../../components';
+
+import { NavbarContent, Nav, FooterInfo } from './NavbarStyles';
 
 export const Navbar: FC = () => {
   const {
@@ -43,29 +54,36 @@ export const Navbar: FC = () => {
   };
 
   return (
-    <Content>
+    <NavbarContent>
       <Container>
         <Nav>
           <ul>
             <NavbarItem
-              label="Canciones"
+              label="Música"
+              icon={<MusicIcon />}
               onClick={() => onClickItem(onMusicActive)}
               isActive={musicActive}
             />
             <NavbarItem
               label="Inicio"
+              icon={<HomeIcon />}
               onClick={() => onClickItem(onHomeActive)}
               isActive={homeActive}
             />
             <NavbarItem
               label="Contacto"
+              icon={<ContactIcon />}
               onClick={() => onClickItem(onContactActive)}
               isActive={contactActive}
             />
-            <NavbarItem label="Bio" onClick={onClickBio} isActive={bioActive} />
+            <NavbarItem label="Bio" icon={<BioIcon />} onClick={onClickBio} isActive={bioActive} />
           </ul>
         </Nav>
+        <FooterInfo>
+          <Copyright />
+          <Powered />
+        </FooterInfo>
       </Container>
-    </Content>
+    </NavbarContent>
   );
 };

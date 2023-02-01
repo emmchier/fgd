@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
-import { Button } from '../button';
+
+import { Button } from '../../../components';
+
 import { SnackbarContent } from './SnackbarStyles';
 
 interface PropTypes {

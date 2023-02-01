@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import useIsMobile from '../../../hooks/useIsMobile';
+
 import { Button } from '../button';
 
 import { Item } from './NavbarStyles';
@@ -7,17 +7,18 @@ import { Item } from './NavbarStyles';
 interface NavbarItemProps {
   label: string;
   isActive?: boolean;
+  icon?: React.ReactNode;
   onClick?: () => void;
 }
 
-export const NavbarItem: FC<NavbarItemProps> = ({ label, isActive = false, onClick }) => {
-  const isMobile = useIsMobile();
-
+export const NavbarItem: FC<NavbarItemProps> = ({ label, isActive = false, icon, onClick }) => {
   return (
     <Item active={isActive} label={label}>
       <Button
         onClick={onClick}
-        variant={isMobile ? 'nav' : 'ghost'}
+        variant="ghost"
+        iconLeft={true}
+        icon={icon}
         ariaLabel={`Link de Pantalla ${label} ${isActive === true ? 'activo' : 'inactivo'}`}
       >
         {label}

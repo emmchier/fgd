@@ -1,6 +1,6 @@
 import { FCC } from '../../../types';
 
-import { Heading } from '..';
+import { Heading } from '../../../components';
 
 import { PageTitleContent } from './SectionTitleStyles';
 
@@ -18,7 +18,7 @@ export const PageTitle: FCC<PageTitleProps> = ({
 }) => {
   return (
     <PageTitleContent>
-      <Heading variant={variant} color={color} weight={weight}>
+      <Heading variant={variant} color={color} weight={weight} cap="upper">
         {children}
       </Heading>
     </PageTitleContent>

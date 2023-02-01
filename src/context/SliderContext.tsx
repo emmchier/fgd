@@ -10,6 +10,7 @@ interface SliderContextProps {
   singingActive: boolean;
   loading: boolean;
   response: number;
+  banner: boolean;
 
   // Methods
   onMusicActive: () => void;
@@ -23,6 +24,8 @@ interface SliderContextProps {
   hideLoading: () => void;
   showMessage: () => void;
   hideMessage: () => void;
+  showBanner: () => void;
+  hideBanner: () => void;
 }
 
 export const SliderContext = createContext({} as SliderContextProps);
