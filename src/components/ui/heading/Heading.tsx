@@ -1,4 +1,5 @@
 import { FCC } from '../../../types';
+
 import {
   Heading1,
   Heading2,
@@ -10,7 +11,7 @@ import {
 } from './HeadingStyles';
 
 interface HeadingTypes {
-  color?: string;
+  color?: 'white' | 'black' | 'primary' | 'secondary' | 'error';
   variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   size?: 'title1' | 'title2' | 'title3';
   weight?: 'regular' | 'medium' | 'semiBold' | 'bold' | 'extraBold';
@@ -23,6 +24,7 @@ export const Heading: FCC<HeadingTypes> = ({
   size = 'title1',
   weight = 'medium',
   cap = 'default',
+  color = 'secondary',
 }) => {
   const setVariant = () => {
     switch (variant) {
@@ -44,7 +46,7 @@ export const Heading: FCC<HeadingTypes> = ({
   };
 
   return (
-    <HeadingContent variant={variant} size={size} weight={weight} cap={cap}>
+    <HeadingContent variant={variant} size={size} color={color} weight={weight} cap={cap}>
       {setVariant()}
     </HeadingContent>
   );

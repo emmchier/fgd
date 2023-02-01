@@ -14,6 +14,6 @@ export const Content = styled.div<PropTypes>`
   margin: ${({ margin }) => margin};
   padding: ${({ padding }) => padding};
   border-radius: ${({ theme }) => theme.border.radius.main};
-  background-color: ${({ theme }) => theme.color.primary.main};
+  background-color: ${({ theme }) => theme.color.secondary.dark};
   ${({ moveTo }) => `transform: translate${moveTo};`};
 `;

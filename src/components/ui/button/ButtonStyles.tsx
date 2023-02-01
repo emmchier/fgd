@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components';
 
-interface ButtonI {
-  variant?: 'contained' | 'outlined' | 'ghost' | 'text' | 'icon';
-  size?: 'small' | 'medium';
-  fullWidth?: boolean;
-  ariaLabel?: string;
-  iconRight?: boolean;
-  iconLeft?: boolean;
+interface ButtonProps {
+  variant: 'contained' | 'outlined' | 'ghost' | 'text' | 'icon';
+  size: 'small' | 'medium';
+  fullWidth: boolean;
+  ariaLabel: string;
+  iconRight: boolean;
+  iconLeft: boolean;
 }
 
 const sizeStyles = (size: string) =>
@@ -224,7 +224,7 @@ const variantStyles = (variant: string) =>
     `,
   }[variant]);
 
-export const ButtonContent = styled.button<ButtonI>`
+export const ButtonContent = styled.button<ButtonProps>`
   position: relative;
   display: flex;
   align-items: center;
@@ -236,8 +236,8 @@ export const ButtonContent = styled.button<ButtonI>`
   border-radius: ${({ theme }) => theme.border.radius.small};
   font-weight: ${({ theme }) => theme.font.weight.bold};
   color: ${({ theme }) => theme.color.secondary.dark};
-  ${({ variant }) => variantStyles(variant as any)};
-  ${({ size }) => sizeStyles(size as any)};
+  ${({ variant }) => variantStyles(variant)};
+  ${({ size }) => sizeStyles(size)};
 
   svg {
     filter: brightness(0) saturate(100%) invert(19%) sepia(15%) saturate(4545%) hue-rotate(4deg)

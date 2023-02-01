@@ -3,7 +3,7 @@ import { css } from 'styled-components';
 export const theme = {
   color: {
     background: {
-      main: '#F1ECCA',
+      main: '#FEFBE7',
       light: '#FCEEC2',
       dark: '#FFE9A5',
     },

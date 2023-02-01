@@ -9,46 +9,44 @@ export const AsideContent = styled.div`
 `;
 
 export const BarLeft = styled.aside`
-  width: 70px;
+  width: 20px;
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: column;
   position: relative;
   z-index: 9;
 
   span {
-    transform: rotate(-90deg) translateY(36px);
-    width: 500px;
+    transform: rotate(-90deg) translateY(10px);
 
     div {
       display: flex;
       align-items: center;
-      justify-content: center;
+      width: 200px;
 
       p {
         margin: 0;
         padding: 0;
-        font-size: 13px;
-        line-height: 13px;
         color: ${({ theme }) => theme.color.secondary.main};
       }
 
       a {
-        line-height: 13px;
+        font-size: ${({ theme }) => theme.font.body[4].size};
+        line-height: ${({ theme }) => theme.font.body[4].lineHeight};
+
         svg {
-          filter: brightness(0) saturate(100%) invert(90%) sepia(63%) saturate(2683%)
-            hue-rotate(326deg) brightness(79%) contrast(84%);
-          transform: translateY(-2px);
+          filter: brightness(0) saturate(100%) invert(27%) sepia(93%) saturate(373%)
+            hue-rotate(351deg) brightness(99%) contrast(90%);
+          transform: translateY(1px);
           margin-left: ${({ theme }) => theme.spacing(0.5)};
-          margin-right: ${({ theme }) => theme.spacing(3)};
           transition: ${({ theme }) => theme.transition.main};
 
           &:hover {
             transition: ${({ theme }) => theme.transition.main};
-            filter: brightness(0) saturate(100%) invert(32%) sepia(9%) saturate(3866%)
-              hue-rotate(350deg) brightness(93%) contrast(84%) !important;
+            filter: brightness(0) saturate(100%) invert(17%) sepia(88%) saturate(485%)
+              hue-rotate(351deg) brightness(99%) contrast(99%);
           }
         }
       }
@@ -57,44 +55,41 @@ export const BarLeft = styled.aside`
 `;
 
 export const BarRight = styled.aside`
-  width: 80px;
+  width: 20px;
   height: 100vh;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   flex-direction: column;
   position: relative;
   z-index: 9;
+  transform: translateX(-10px);
 
   span {
-    transform: translateY(-160px) translateX(-160px) rotate(90deg);
+    transform: rotate(90deg) translateX(-160px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    div {
+    ul {
       display: flex;
       align-items: center;
       justify-content: center;
-
-      p {
-        width: 80%;
-        margin: 0;
-      }
+      width: 250px;
+      margin: 0;
+      font-size: ${({ theme }) => theme.font.body[4].size};
+      line-height: ${({ theme }) => theme.font.body[4].lineHeight};
 
       a {
-        margin-right: ${({ theme }) => theme.spacing(5)};
-        transition: ${({ theme }) => theme.transition.main};
-
+        cursor: pointer;
+        margin-right: ${({ theme }) => theme.spacing(3)};
         &:hover {
-          color: ${({ theme }) => theme.color.primary.main};
-          transition: ${({ theme }) => theme.transition.main};
+          color: #000000;
         }
       }
-
-      p,
-      a {
-        font-size: 13px;
-        line-height: 13px;
-        color: ${({ theme }) => theme.color.secondary.main};
-      }
+    }
+    div {
+      transform: rotate(90deg) translateY(-40px);
     }
   }
 `;

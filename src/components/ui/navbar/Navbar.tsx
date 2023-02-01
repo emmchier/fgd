@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { SliderContext } from '../../../context';
 import { NavbarItem } from './NavbarItem';
 import { Content, Nav } from './NavbarStyles';
+import { Container } from '../container';
 
 export const Navbar: FC = () => {
   const {
@@ -11,23 +12,31 @@ export const Navbar: FC = () => {
     homeActive,
     contactActive,
     bioActive,
+    cookiesActive,
+    policyActive,
+    singingActive,
     onMusicActive,
     onHomeActive,
     onContactActive,
     onBioActive,
   } = useContext(SliderContext);
 
-  const router = useRouter();
+  const { push } = useRouter();
 
   const onClickBio = () => {
     onBioActive();
-    router.push('/biografia');
+    push('/biografia');
   };
 
   const onClickItem = (onClick: () => void) => {
-    if (bioActive === true) {
+    if (
+      bioActive === true ||
+      cookiesActive === true ||
+      policyActive === true ||
+      singingActive === true
+    ) {
       onClick();
-      router.push('/');
+      push('/');
     } else {
       onClick();
     }
@@ -35,26 +44,28 @@ export const Navbar: FC = () => {
 
   return (
     <Content>
-      <Nav>
-        <ul>
-          <NavbarItem
-            label="CANCIONES"
-            onClick={() => onClickItem(onMusicActive)}
-            isActive={musicActive}
-          />
-          <NavbarItem
-            label="INICIO"
-            onClick={() => onClickItem(onHomeActive)}
-            isActive={homeActive}
-          />
-          <NavbarItem
-            label="CONTACTO"
-            onClick={() => onClickItem(onContactActive)}
-            isActive={contactActive}
-          />
-          <NavbarItem label="BIO" onClick={onClickBio} isActive={bioActive} />
-        </ul>
-      </Nav>
+      <Container>
+        <Nav>
+          <ul>
+            <NavbarItem
+              label="Canciones"
+              onClick={() => onClickItem(onMusicActive)}
+              isActive={musicActive}
+            />
+            <NavbarItem
+              label="Inicio"
+              onClick={() => onClickItem(onHomeActive)}
+              isActive={homeActive}
+            />
+            <NavbarItem
+              label="Contacto"
+              onClick={() => onClickItem(onContactActive)}
+              isActive={contactActive}
+            />
+            <NavbarItem label="Bio" onClick={onClickBio} isActive={bioActive} />
+          </ul>
+        </Nav>
+      </Container>
     </Content>
   );
 };

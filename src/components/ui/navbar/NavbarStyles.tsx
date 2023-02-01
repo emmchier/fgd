@@ -13,59 +13,36 @@ export const Content = styled.div`
 `;
 
 export const Nav = styled.nav`
-  margin: 0 ${({ theme }) => theme.spacing(12)};
+  height: ${({ theme }) => theme.spacing(20)};
   ul {
     margin: 0;
     display: flex;
     align-items: center;
-    margin: ${({ theme }) => theme.spacing(6)};
-  }
+    gap: ${({ theme }) => theme.spacing(4)};
 
-  li:last-child {
-    flex-grow: 1;
-    text-align: end;
+    li:nth-child(4) {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-end;
+      margin-right: ${({ theme }) => theme.spacing(10)};
+    }
   }
 `;
 
 export const Item = styled.li<NavbarTypes>`
-  font-weight: ${({ theme }) => theme.font.weight.medium};
   position: relative;
 
   ${({ active }) =>
-    active === true
-      ? css`
-          span {
-            border: 1px solid ${({ theme }) => theme.color.primary.main};
-            border-radius: ${({ theme }) => theme.border.radius.main};
-            pointer-events: none;
+    active === true &&
+    css`
+      button {
+        background: ${({ theme }) => theme.color.background.light};
+        pointer-events: none;
+        border: 1.5px solid transparent;
 
-            a {
-              font-weight: ${({ theme }) => theme.font.weight.bold};
-              color: ${({ theme }) => theme.color.primary.main};
-            }
-          }
-        `
-      : css`
-          span {
-            border: 1px solid transparent;
-
-            a {
-              font-weight: ${({ theme }) => theme.font.weight.medium};
-              color: ${({ theme }) => theme.color.secondary.main};
-            }
-          }
-        `};
-
-  span {
-    cursor: pointer;
-    padding: ${({ theme }) => `${theme.spacing(2)} ${theme.spacing(3)}`};
-    a {
-      transition: ${({ theme }) => theme.transition.main};
-    }
-  }
-
-  a:hover {
-    transition: ${({ theme }) => theme.transition.main};
-    color: ${({ theme }) => theme.color.primary.main};
-  }
+        &:hover {
+          background: ${({ theme }) => theme.color.background.light};
+        }
+      }
+    `};
 `;

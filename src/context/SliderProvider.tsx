@@ -7,6 +7,9 @@ export interface SliderState {
   homeActive: boolean;
   contactActive: boolean;
   bioActive: boolean;
+  cookiesActive: boolean;
+  policyActive: boolean;
+  singingActive: boolean;
   loading: boolean;
   response: number;
 }
@@ -16,6 +19,9 @@ const INITIAL_STATE: SliderState = {
   homeActive: true,
   contactActive: false,
   bioActive: false,
+  cookiesActive: false,
+  policyActive: false,
+  singingActive: false,
   loading: false,
   response: 0,
 };
@@ -27,6 +33,9 @@ export const SliderProvider: FCC = ({ children }) => {
   const onHomeActive = () => dispatch({ type: '[Slider] - homeActive' });
   const onContactActive = () => dispatch({ type: '[Slider] - contactActive' });
   const onBioActive = () => dispatch({ type: '[Slider] - bioActive' });
+  const onCookiesActive = () => dispatch({ type: '[Slider] - cookiesActive' });
+  const onPolicyActive = () => dispatch({ type: '[Slider] - policyActive' });
+  const onSingingActive = () => dispatch({ type: '[Slider] - singingActive' });
   const showLoading = () => dispatch({ type: '[Slider] - showLoading' });
   const hideLoading = () => dispatch({ type: '[Slider] - hideLoading' });
   const showMessage = () => dispatch({ type: '[Slider] - showMessage' });
@@ -40,6 +49,9 @@ export const SliderProvider: FCC = ({ children }) => {
         onHomeActive,
         onContactActive,
         onBioActive,
+        onCookiesActive,
+        onPolicyActive,
+        onSingingActive,
         showLoading,
         hideLoading,
         showMessage,

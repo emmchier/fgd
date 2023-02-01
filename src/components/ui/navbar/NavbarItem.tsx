@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { Button } from '../button';
 
 import { Item } from './NavbarStyles';
 
@@ -11,9 +12,13 @@ interface NavbarItemProps {
 export const NavbarItem: FC<NavbarItemProps> = ({ label, isActive = false, onClick }) => {
   return (
     <Item active={isActive} label={label}>
-      <span onClick={onClick}>
-        <a>{label}</a>
-      </span>
+      <Button
+        onClick={onClick}
+        variant="ghost"
+        ariaLabel={`Link de Pantalla ${label} ${isActive === true ? 'activo' : 'inactivo'}`}
+      >
+        {label}
+      </Button>
     </Item>
   );
 };

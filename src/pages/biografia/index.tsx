@@ -1,11 +1,21 @@
 import type { NextPage, GetStaticProps } from 'next';
 import { Page, PageTitle } from '../../components';
+import { useRouter } from 'next/router';
+import { useContext, useEffect } from 'react';
+import { SliderContext } from '../../context';
 
 interface BioPageProps {
   // bio: string;
 }
 
 const BioPage: NextPage<BioPageProps> = (/*{ bio }*/) => {
+  const { onBioActive } = useContext(SliderContext);
+  const { asPath } = useRouter();
+
+  useEffect(() => {
+    asPath === '/biografia' && onBioActive();
+  }, []);
+
   return (
     <Page title="Biografía" description="Descripción" keywords="lala, lala, lala">
       <PageTitle>

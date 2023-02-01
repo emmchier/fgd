@@ -4,22 +4,22 @@ import { useContext, useEffect } from 'react';
 import { Page, PageTitle } from '../../components';
 import { SliderContext } from '../../context';
 
-interface QualityPolicyPageProps {
+interface SingingHousesProps {
   // bio: string;
 }
 
-const QualityPolicyPage: NextPage<QualityPolicyPageProps> = (/*{ bio }*/) => {
-  const { onPolicyActive } = useContext(SliderContext);
+const SingingHousesPage: NextPage<SingingHousesProps> = (/*{ bio }*/) => {
+  const { onSingingActive } = useContext(SliderContext);
   const { asPath } = useRouter();
 
   useEffect(() => {
-    asPath === '/politicas-de-calidad' && onPolicyActive();
+    asPath === '/clases-de-canto' && onSingingActive();
   }, []);
 
   return (
     <Page title="Clases de canto" description="Descripción" keywords="lala, lala, lala">
       <PageTitle>
-        <b>POLITICAS DE CALIDAD</b>
+        <b>CLASES DE CANTO</b>
       </PageTitle>
     </Page>
   );
@@ -35,4 +35,4 @@ const QualityPolicyPage: NextPage<QualityPolicyPageProps> = (/*{ bio }*/) => {
 //   };
 // };
 
-export default QualityPolicyPage;
+export default SingingHousesPage;

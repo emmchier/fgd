@@ -5,9 +5,10 @@ interface HeadingProps {
   size: 'title1' | 'title2' | 'title3';
   weight: 'regular' | 'medium' | 'semiBold' | 'bold' | 'extraBold';
   cap: 'default' | 'upper' | 'lower' | 'cap';
+  color: 'white' | 'black' | 'primary' | 'secondary' | 'error';
 }
 
-const sizetStyles = (size: string) =>
+const sizeStyles = (size: string) =>
   ({
     title1: css`
       font-size: ${({ theme }) => theme.font.title[1].size};
@@ -73,6 +74,25 @@ const capStyles = (cap: string) =>
     `,
   }[cap]);
 
+const colorStyles = (color: string) =>
+  ({
+    white: css`
+      color: ${({ theme }) => theme.color.white};
+    `,
+    black: css`
+      color: ${({ theme }) => theme.color.black};
+    `,
+    primary: css`
+      color: ${({ theme }) => theme.color.primary.dark};
+    `,
+    secondary: css`
+      color: ${({ theme }) => theme.color.secondary.dark};
+    `,
+    error: css`
+      color: ${({ theme }) => theme.color.error};
+    `,
+  }[color]);
+
 export const HeadingContent = styled.div<HeadingProps>`
   h1,
   h2,
@@ -83,10 +103,10 @@ export const HeadingContent = styled.div<HeadingProps>`
     font-style: normal;
     padding: 0;
     margin: 0 !important;
-    color: ${({ theme }) => theme.color.primary.main};
     ${({ weight }) => weightStyles(weight)};
     ${({ cap }) => capStyles(cap)};
-    ${({ size }) => sizetStyles(size)};
+    ${({ size }) => sizeStyles(size)};
+    ${({ color }) => colorStyles(color)};
 
     b {
       color: ${({ theme }) => theme.color.secondary.main};

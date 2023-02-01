@@ -5,6 +5,9 @@ type SliderActionType =
   | { type: '[Slider] - homeActive' }
   | { type: '[Slider] - contactActive' }
   | { type: '[Slider] - bioActive' }
+  | { type: '[Slider] - cookiesActive' }
+  | { type: '[Slider] - policyActive' }
+  | { type: '[Slider] - singingActive' }
   | { type: '[Slider] - showLoading' }
   | { type: '[Slider] - hideLoading' }
   | { type: '[Slider] - setResponse' }
@@ -20,6 +23,9 @@ export const sliderReducer = (state: SliderState, action: SliderActionType): Sli
         homeActive: false,
         contactActive: false,
         bioActive: false,
+        singingActive: false,
+        cookiesActive: false,
+        policyActive: false,
       };
     case '[Slider] - homeActive':
       return {
@@ -28,6 +34,9 @@ export const sliderReducer = (state: SliderState, action: SliderActionType): Sli
         homeActive: true,
         contactActive: false,
         bioActive: false,
+        singingActive: false,
+        cookiesActive: false,
+        policyActive: false,
       };
     case '[Slider] - contactActive':
       return {
@@ -36,6 +45,9 @@ export const sliderReducer = (state: SliderState, action: SliderActionType): Sli
         homeActive: false,
         contactActive: true,
         bioActive: false,
+        singingActive: false,
+        cookiesActive: false,
+        policyActive: false,
       };
     case '[Slider] - bioActive':
       return {
@@ -44,6 +56,42 @@ export const sliderReducer = (state: SliderState, action: SliderActionType): Sli
         homeActive: false,
         contactActive: false,
         bioActive: true,
+        singingActive: false,
+        cookiesActive: false,
+        policyActive: false,
+      };
+    case '[Slider] - cookiesActive':
+      return {
+        ...state,
+        musicActive: false,
+        homeActive: false,
+        contactActive: false,
+        bioActive: false,
+        singingActive: false,
+        cookiesActive: true,
+        policyActive: false,
+      };
+    case '[Slider] - policyActive':
+      return {
+        ...state,
+        musicActive: false,
+        homeActive: false,
+        contactActive: false,
+        bioActive: false,
+        singingActive: false,
+        cookiesActive: false,
+        policyActive: true,
+      };
+    case '[Slider] - singingActive':
+      return {
+        ...state,
+        musicActive: false,
+        homeActive: false,
+        contactActive: false,
+        bioActive: false,
+        singingActive: true,
+        cookiesActive: false,
+        policyActive: false,
       };
     case '[Slider] - showLoading':
       return {

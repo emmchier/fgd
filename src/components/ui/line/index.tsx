@@ -11,7 +11,7 @@ interface LineTypes {
 }
 
 export const Line: FC<LineTypes> = ({
-  width = '50px',
+  width = '0',
   height = '2px',
   moveTo = '(0, 0)',
   margin = '0',

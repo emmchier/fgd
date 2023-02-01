@@ -3,31 +3,37 @@ import { ButtonContent } from './ButtonStyles';
 
 interface ButtonTypes {
   type?: 'submit' | 'reset' | 'button';
-  color?: 'primary' | 'secondary';
-  variant?: 'contained' | 'outlined' | 'text';
+  variant?: 'contained' | 'outlined' | 'ghost' | 'text' | 'icon';
+  size?: 'small' | 'medium';
   fullWidth?: boolean;
-  ariaLabel?: string;
+  ariaLabel: string;
   disabled?: boolean;
+  iconRight?: boolean;
+  iconLeft?: boolean;
   onClick?: (e: any) => any;
 }
 
 export const Button: FCC<ButtonTypes> = ({
   children,
   type = 'button',
-  color = 'primary',
+  size = 'medium',
   variant = 'contained',
   fullWidth = false,
   disabled = false,
   ariaLabel = '',
+  iconRight = false,
+  iconLeft = false,
   onClick,
 }) => (
   <ButtonContent
     type={type}
-    color={color}
+    size={size}
     variant={variant}
     fullWidth={fullWidth}
     disabled={disabled}
-    aria-label={ariaLabel}
+    ariaLabel={ariaLabel}
+    iconRight={iconRight}
+    iconLeft={iconLeft}
     onClick={onClick}
   >
     {children}
