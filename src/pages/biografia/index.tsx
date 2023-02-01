@@ -18,9 +18,7 @@ const BioPage: NextPage<BioPageProps> = (/*{ bio }*/) => {
 
   return (
     <Page title="Biografía" description="Descripción" keywords="lala, lala, lala">
-      <PageTitle>
-        <b>BIOGRAFÍA</b>
-      </PageTitle>
+      <PageTitle>BIOGRAFÍA</PageTitle>
     </Page>
   );
 };

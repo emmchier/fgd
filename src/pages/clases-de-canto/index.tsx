@@ -19,7 +19,7 @@ const SingingHousesPage: NextPage<SingingHousesProps> = (/*{ bio }*/) => {
   return (
     <Page title="Clases de canto" description="Descripción" keywords="lala, lala, lala">
       <PageTitle>
-        <b>CLASES DE CANTO</b>
+        CLASES DE<span>CANTO</span>
       </PageTitle>
     </Page>
   );

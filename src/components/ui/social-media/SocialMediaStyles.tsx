@@ -10,8 +10,6 @@ export const SocialMediaContent = styled.ul`
 
   figure {
     div {
-      width: ${({ theme }) => theme.spacing(6)};
-      height: ${({ theme }) => theme.spacing(6)};
       display: flex;
       align-items: center;
       justify-content: center;
@@ -19,13 +17,9 @@ export const SocialMediaContent = styled.ul`
   }
 
   svg {
-    filter: brightness(0) saturate(100%) invert(72%) sepia(35%) saturate(737%) hue-rotate(5deg)
-      brightness(81%) contrast(94%);
+    filter: brightness(0) saturate(100%) invert(19%) sepia(14%) saturate(3848%) hue-rotate(358deg)
+      brightness(97%) contrast(96%);
     transition: ${({ theme }) => theme.transition.main};
-
-    &:hover {
-      opacity: 0.5;
-    }
   }
 
   li {

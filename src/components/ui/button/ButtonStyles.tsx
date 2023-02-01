@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 interface ButtonProps {
-  variant: 'contained' | 'outlined' | 'ghost' | 'text' | 'icon';
+  variant: 'contained' | 'outlined' | 'ghost' | 'text' | 'icon' | 'nav';
   size: 'small' | 'medium';
   fullWidth: boolean;
   ariaLabel: string;
@@ -178,6 +178,9 @@ const variantStyles = (variant: string) =>
     `,
     icon: css`
       border-radius: ${({ theme }) => theme.border.radius.full};
+      border: none;
+      padding: ${({ theme }) => theme.spacing(2)} !important;
+      background: transparent;
 
       &:hover {
         background: ${({ theme }) => theme.color.background.light};
@@ -209,12 +212,13 @@ const variantStyles = (variant: string) =>
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      border: none;
       color: ${({ theme }) => theme.color.secondary.main};
       background: ${({ theme }) => theme.color.background.light};
-      font-size: ${({ theme }) => theme.font.body[4].size};
-      line-height: ${({ theme }) => theme.font.body[4].lineHeight};
+      font-size: ${({ theme }) => theme.font.body[4].size} !important;
+      line-height: ${({ theme }) => theme.font.body[4].lineHeight} !important;
       font-weight: ${({ theme }) => theme.font.weight.medium};
-      padding: ${({ theme }) => theme.spacing(2)};
+      padding: ${({ theme }) => theme.spacing(1.5)} !important;
 
       svg {
         margin-bottom: ${({ theme }) => theme.spacing(1)};

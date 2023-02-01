@@ -52,6 +52,10 @@ export const BarLeft = styled.aside`
       }
     }
   }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  }
 `;
 
 export const BarRight = styled.aside`
@@ -66,7 +70,7 @@ export const BarRight = styled.aside`
   transform: translateX(-10px);
 
   span {
-    transform: rotate(90deg) translateX(-160px);
+    transform: rotate(90deg) translateX(-180px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -75,7 +79,7 @@ export const BarRight = styled.aside`
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 250px;
+      width: 350px;
       margin: 0;
       font-size: ${({ theme }) => theme.font.body[4].size};
       line-height: ${({ theme }) => theme.font.body[4].lineHeight};
@@ -90,6 +94,10 @@ export const BarRight = styled.aside`
     }
     div {
       transform: rotate(90deg) translateY(-40px);
+    }
+
+    @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+      display: none;
     }
   }
 `;

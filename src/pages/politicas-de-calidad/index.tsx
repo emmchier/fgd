@@ -19,7 +19,7 @@ const QualityPolicyPage: NextPage<QualityPolicyPageProps> = (/*{ bio }*/) => {
   return (
     <Page title="Clases de canto" description="Descripción" keywords="lala, lala, lala">
       <PageTitle>
-        <b>POLITICAS DE CALIDAD</b>
+        POLITICAS DE <span>CALIDAD</span>
       </PageTitle>
     </Page>
   );

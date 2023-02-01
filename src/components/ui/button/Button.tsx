@@ -3,7 +3,7 @@ import { ButtonContent } from './ButtonStyles';
 
 interface ButtonTypes {
   type?: 'submit' | 'reset' | 'button';
-  variant?: 'contained' | 'outlined' | 'ghost' | 'text' | 'icon';
+  variant?: 'contained' | 'outlined' | 'ghost' | 'text' | 'icon' | 'nav';
   size?: 'small' | 'medium';
   fullWidth?: boolean;
   ariaLabel: string;

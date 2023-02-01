@@ -41,7 +41,7 @@ export const theme = {
       },
       3: {
         size: '1.25rem', // 20px
-        lineHeight: '1.5rem', // 24px
+        lineHeight: '1.8rem', // 28.8px
       },
     },
     body: {
@@ -58,12 +58,12 @@ export const theme = {
         lineHeight: '1.063rem', // 17px
       },
       4: {
-        size: '0.625rem', // 10px
-        lineHeight: '0.75rem', // 12px
+        size: '0.75rem', // 12px
+        lineHeight: '0.938rem', // 15px
       },
       5: {
-        size: '0.5rem', // 8px
-        lineHeight: '0.625rem', // 10px
+        size: '0.625rem', // 10px
+        lineHeight: '0.75rem', // 12px
       },
     },
     weight: {

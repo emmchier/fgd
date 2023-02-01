@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Animation } from '../../../animation';
-import { PageTitle } from '../../../page-title';
+import { PageTitle } from '../../../section-title';
 import { Songs } from '../../../songs';
 
 interface MusicPropTypes {
@@ -12,10 +12,8 @@ export const Music: FC<MusicPropTypes> = ({ songList, onLoad }) => {
   return (
     <>
       {onLoad === true && (
-        <Animation lapse="2.5">
-          <PageTitle>
-            <b>CANCIONES</b>
-          </PageTitle>
+        <Animation lapse="2">
+          <PageTitle>CANCIONES</PageTitle>
           <Songs items={songList} />
         </Animation>
       )}

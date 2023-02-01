@@ -20,11 +20,21 @@ export const Nav = styled.nav`
     align-items: center;
     gap: ${({ theme }) => theme.spacing(4)};
 
+    @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+      justify-content: space-between;
+      gap: 0;
+    }
+
     li:nth-child(4) {
       flex-grow: 1;
       display: flex;
       justify-content: flex-end;
       margin-right: ${({ theme }) => theme.spacing(10)};
+
+      @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+        flex-grow: 0;
+        margin-right: 0;
+      }
     }
   }
 `;

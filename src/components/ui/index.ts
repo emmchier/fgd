@@ -6,7 +6,7 @@ export * from './navbar';
 export * from './aside-info';
 export * from './social-media';
 export * from './heading';
-export * from './page-title';
+export * from './section-title';
 export * from './songs';
 export * from './button';
 export * from './form';

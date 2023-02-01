@@ -18,9 +18,7 @@ const CookiesPage: NextPage<CookiesPageProps> = (/*{ bio }*/) => {
 
   return (
     <Page title="Clases de canto" description="Descripción" keywords="lala, lala, lala">
-      <PageTitle>
-        <b>COOKIES</b>
-      </PageTitle>
+      <PageTitle>COOKIES</PageTitle>
     </Page>
   );
 };

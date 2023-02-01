@@ -55,7 +55,7 @@ export const AsideInfo: FCC = ({ children }) => {
                 <a onClick={onClickCookies}>Cookies</a>
               </li>
               <li>
-                <Text size="body4">{new Date().getFullYear()}©FGD</Text>
+                <Text size="body4">{new Date().getFullYear()} © FGD</Text>
               </li>
               <li>
                 <Line width="2px" height="50px" />
