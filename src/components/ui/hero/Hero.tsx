@@ -1,31 +1,41 @@
-import React, { FC, useContext } from 'react';
+import React, { FC } from 'react';
 
 import Image from 'next/image';
 
-import { SliderContext } from '../../../context';
-
 import { HeroContent } from './HeroStyles';
 
-export const Hero: FC = () => {
-  const { musicActive, homeActive, contactActive } = useContext(SliderContext);
+interface Props {
+  alt?: string;
+  img?: string;
+  width?: any;
+  height?: any;
+  position?: string;
+  top?: string;
+  bottom?: string;
+  left?: string;
+  right?: string;
+}
 
-  const onItemActive = () => {
-    if (musicActive === true) return 'music';
-    if (homeActive === true) return 'home';
-    if (contactActive === true) return 'contact';
-
-    return 'home';
-  };
-
-  return (
-    <HeroContent move={onItemActive()}>
-      <Image
-        src={'/assets/home-hero-desk.png' || '/images/default-bg.svg'}
-        alt="Fabricio sentado tocando su guitarra"
-        layout="fill"
-        objectFit="contain"
-        priority
-      />
-    </HeroContent>
-  );
-};
+export const Hero: FC<Props> = ({
+  img = '',
+  alt = '',
+  width = '100%',
+  height = '100%',
+  position = 'relative',
+  top = '',
+  bottom = '',
+  left = '',
+  right = '',
+}) => (
+  <HeroContent
+    width={width}
+    height={height}
+    position={position}
+    top={top}
+    bottom={bottom}
+    left={left}
+    right={right}
+  >
+    <Image src={img} alt={alt} layout="fill" objectFit="contain" priority />
+  </HeroContent>
+);

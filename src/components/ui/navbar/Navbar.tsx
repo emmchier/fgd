@@ -1,6 +1,7 @@
 import React, { FC, useContext } from 'react';
 
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 import { SliderContext } from '../../../context';
 
@@ -13,9 +14,10 @@ import {
   BioIcon,
   Powered,
   Copyright,
+  Hero,
 } from '../../../components';
 
-import { NavbarContent, Nav, FooterInfo } from './NavbarStyles';
+import { NavbarContent, Nav, FooterInfo, HeroMob } from './NavbarStyles';
 
 export const Navbar: FC = () => {
   const {

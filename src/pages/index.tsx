@@ -1,10 +1,12 @@
+import { useContext } from 'react';
+
 import type { NextPage } from 'next';
 
 import { MusicTypes } from '../interfaces';
-
-import { Page, Hero, Slider } from '../components';
-import { useContext } from 'react';
 import { SliderContext } from '../context';
+
+import { Page, SliderHero, Slider } from '../components';
+
 import styled, { css } from 'styled-components';
 
 interface HomePageProps {
@@ -45,7 +47,7 @@ const HomePage: NextPage<HomePageProps> = () => {
       keywords="lala, lala, lala"
     >
       <ContainerHero show={setActive()}>
-        <Hero />
+        <SliderHero />
       </ContainerHero>
       <Slider />
     </Page>

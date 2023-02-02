@@ -125,3 +125,15 @@ export const FooterInfo = styled.div`
     }
   }
 `;
+
+export const HeroMob = styled.div`
+  display: none;
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    display: block;
+
+    span {
+      background: red !important;
+    }
+  }
+`;
