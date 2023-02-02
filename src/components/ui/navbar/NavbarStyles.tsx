@@ -8,11 +8,14 @@ interface NavbarTypes {
 export const NavbarContent = styled.div`
   width: 100%;
   position: fixed;
-  z-index: 99;
+  z-index: 9999;
   bottom: 0;
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     box-shadow: ${({ theme }) => theme.shadow.main};
+    background: ${({ theme }) => theme.color.background.main};
+    position: fixed;
+    z-index: 9999;
   }
 `;
 
@@ -44,7 +47,7 @@ export const Nav = styled.nav`
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     height: auto;
-    padding: ${({ theme }) => theme.spacing(4)} 0;
+    padding: ${({ theme }) => theme.spacing(4)};
   }
 `;
 
@@ -118,22 +121,23 @@ export const FooterInfo = styled.div`
     justify-content: space-between;
     width: 100%;
 
+    ul {
+      margin-left: ${({ theme }) => theme.spacing(4)};
+    }
+
+    span {
+      margin-right: ${({ theme }) => theme.spacing(4)};
+      width: 100% !important;
+
+      p {
+        width: 100% !important;
+      }
+    }
+
     p,
     a {
       font-size: ${({ theme }) => theme.font.body[5].size};
       line-height: ${({ theme }) => theme.font.body[5].lineHeight};
-    }
-  }
-`;
-
-export const HeroMob = styled.div`
-  display: none;
-
-  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-    display: block;
-
-    span {
-      background: red !important;
     }
   }
 `;

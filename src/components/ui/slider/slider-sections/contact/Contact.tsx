@@ -6,6 +6,7 @@ import {
   Animation,
   Loading,
   PageTitle,
+  Hero,
 } from '../../../../../components';
 
 import { FormContainer } from '../../SliderStyles';

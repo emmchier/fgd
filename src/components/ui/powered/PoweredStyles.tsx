@@ -32,7 +32,7 @@ export const PoweredContent = styled.div`
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     justify-content: flex-end;
-    width: 150px;
+    width: 200px;
   }
 `;
 
@@ -42,7 +42,8 @@ export const Desk = styled.div`
     display: none;
   }
 `;
-export const Mob = styled.div`
+
+export const Mob = styled.span`
   display: none;
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     display: flex;

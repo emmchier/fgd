@@ -17,7 +17,7 @@ import {
   Hero,
 } from '../../../components';
 
-import { NavbarContent, Nav, FooterInfo, HeroMob } from './NavbarStyles';
+import { NavbarContent, Nav, FooterInfo } from './NavbarStyles';
 
 export const Navbar: FC = () => {
   const {
@@ -57,35 +57,33 @@ export const Navbar: FC = () => {
 
   return (
     <NavbarContent>
-      <Container>
-        <Nav>
-          <ul>
-            <NavbarItem
-              label="Música"
-              icon={<MusicIcon />}
-              onClick={() => onClickItem(onMusicActive)}
-              isActive={musicActive}
-            />
-            <NavbarItem
-              label="Inicio"
-              icon={<HomeIcon />}
-              onClick={() => onClickItem(onHomeActive)}
-              isActive={homeActive}
-            />
-            <NavbarItem
-              label="Contacto"
-              icon={<ContactIcon />}
-              onClick={() => onClickItem(onContactActive)}
-              isActive={contactActive}
-            />
-            <NavbarItem label="Bio" icon={<BioIcon />} onClick={onClickBio} isActive={bioActive} />
-          </ul>
-        </Nav>
-        <FooterInfo>
-          <Copyright />
-          <Powered />
-        </FooterInfo>
-      </Container>
+      <Nav>
+        <ul>
+          <NavbarItem
+            label="Música"
+            icon={<MusicIcon />}
+            onClick={() => onClickItem(onMusicActive)}
+            isActive={musicActive}
+          />
+          <NavbarItem
+            label="Inicio"
+            icon={<HomeIcon />}
+            onClick={() => onClickItem(onHomeActive)}
+            isActive={homeActive}
+          />
+          <NavbarItem
+            label="Contacto"
+            icon={<ContactIcon />}
+            onClick={() => onClickItem(onContactActive)}
+            isActive={contactActive}
+          />
+          <NavbarItem label="Bio" icon={<BioIcon />} onClick={onClickBio} isActive={bioActive} />
+        </ul>
+      </Nav>
+      <FooterInfo>
+        <Copyright />
+        <Powered />
+      </FooterInfo>
     </NavbarContent>
   );
 };

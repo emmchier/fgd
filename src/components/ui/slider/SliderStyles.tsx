@@ -10,6 +10,7 @@ export const SliderContent = styled.div`
   margin: 0;
   padding: 0;
   height: 100vh;
+  overflow-y: hidden;
 `;
 
 export const ExpandibleSection = styled.section<ItemTypes>`

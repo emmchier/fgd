@@ -5,7 +5,7 @@ import type { NextPage } from 'next';
 import { MusicTypes } from '../interfaces';
 import { SliderContext } from '../context';
 
-import { Page, SliderHero, Slider } from '../components';
+import { Page, SliderHero, Slider, Hero } from '../components';
 
 import styled, { css } from 'styled-components';
 

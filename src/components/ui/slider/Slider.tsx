@@ -2,7 +2,7 @@ import React, { FC, useContext } from 'react';
 
 import { SliderContext } from '../../../context';
 
-import { SliderItem, Contact, Home, Music } from '../../../components';
+import { SliderItem, Contact, Home, Music, Hero } from '../../../components';
 
 import { SliderContent } from './SliderStyles';
 

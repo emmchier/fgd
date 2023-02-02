@@ -52,4 +52,10 @@ export const BarRight = styled.aside`
       display: none;
     }
   }
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    position: absolute;
+    z-index: 0;
+    transform: translateX(-20px);
+    right: 0;
+  }
 `;

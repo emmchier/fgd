@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app';
+import { Hero } from '../components';
 import { Layout } from '../components/layouts';
 import { SliderProvider } from '../context';
 import { StyledThemeProvider } from '../styles/StyledThemeProvider';

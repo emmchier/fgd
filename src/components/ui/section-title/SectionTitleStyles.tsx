@@ -1,9 +1,18 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const PageTitleContent = styled.div`
+interface PageTitleContentProps {
+  isHome?: boolean;
+}
+
+export const PageTitleContent = styled.div<PageTitleContentProps>`
   display: flex;
   position: relative;
   border-left: 2px solid ${({ theme }) => theme.color.secondary.dark};
+  ${({ isHome }) =>
+    isHome === true &&
+    css`
+      margin-left: ${({ theme }) => theme.spacing(4)};
+    `};
 
   h1,
   h2 {
@@ -12,6 +21,10 @@ export const PageTitleContent = styled.div`
     margin-top: ${({ theme }) => theme.spacing(8)} !important;
     margin-left: ${({ theme }) => theme.spacing(2)} !important;
     transform: translateY(5px);
+
+    @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+      margin-top: ${({ theme }) => theme.spacing(5)} !important;
+    }
 
     b {
       font-weight: ${({ theme }) => theme.font.weight.medium} !important;

@@ -22,9 +22,23 @@ export const SliderHeroContent = styled.div<PropTypes>`
     ${({ move }) => translateStyles(move)};
     transform: translateX(0);
     transition: all 0.35s ease-in-out;
+  }
+`;
 
-    @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-      display: none;
+export const SliderDesk = styled.div`
+  display: flex;
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  }
+`;
+
+export const SliderMob = styled.div`
+  display: none;
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    display: flex;
+    overflow: hidden;
+    span {
+      transform: translateY(8%) !important;
     }
   }
 `;

@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 export interface ContainerProps {
   size: 'sm' | 'md' | 'lg' | 'none';
+  isHome: boolean;
 }
 
 const styledSizes = (size: string) =>
@@ -42,7 +43,6 @@ const styledSizes = (size: string) =>
 
       @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
         margin: 0 auto !important;
-        padding: 0 ${({ theme }) => theme.spacing(5)} !important;
       }
     `,
     none: css`
@@ -53,4 +53,12 @@ const styledSizes = (size: string) =>
 export const ContainerContent = styled.div<ContainerProps>`
   width: auto;
   ${({ size }) => styledSizes(size)};
+  ${({ isHome }) =>
+    isHome === true
+      ? css`
+          padding: 0 !important;
+        `
+      : css`
+          padding: 0 ${({ theme }) => theme.spacing(5)} !important;
+        `}
 `;
