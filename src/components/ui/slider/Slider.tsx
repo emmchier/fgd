@@ -5,9 +5,10 @@ import { SliderContext } from '../../../context';
 import { SliderItem, Contact, Home, Music, Hero } from '../../../components';
 
 import { SliderContent } from './SliderStyles';
+import { MusicType } from '../../../interfaces';
 
 interface SliderTypes {
-  songList?: any[];
+  songList?: MusicType[];
 }
 
 export const Slider: FC<SliderTypes> = ({ songList = [] }) => {

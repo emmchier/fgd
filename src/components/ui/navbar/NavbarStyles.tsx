@@ -21,6 +21,8 @@ export const NavbarContent = styled.div`
 
 export const Nav = styled.nav`
   height: ${({ theme }) => theme.spacing(20)};
+  padding: 0 ${({ theme }) => theme.spacing(10)};
+
   ul {
     margin: 0;
     display: flex;

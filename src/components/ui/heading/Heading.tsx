@@ -11,7 +11,7 @@ import {
 } from './HeadingStyles';
 
 interface HeadingTypes {
-  color?: 'white' | 'black' | 'primary' | 'secondary' | 'error';
+  color?: 'white' | 'black' | 'primary' | 'secondaryMain' | 'secondaryDark' | 'error';
   variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   size?: 'title1' | 'title2' | 'title3';
   weight?: 'regular' | 'medium' | 'semiBold' | 'bold' | 'extraBold';

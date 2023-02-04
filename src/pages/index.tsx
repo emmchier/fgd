@@ -2,7 +2,7 @@ import { useContext } from 'react';
 
 import type { NextPage } from 'next';
 
-import { MusicTypes } from '../interfaces';
+import { MusicType } from '../interfaces';
 import { SliderContext } from '../context';
 
 import { Page, SliderHero, Slider, Hero } from '../components';
@@ -10,7 +10,7 @@ import { Page, SliderHero, Slider, Hero } from '../components';
 import styled, { css } from 'styled-components';
 
 interface HomePageProps {
-  music: MusicTypes[];
+  music: MusicType[];
 }
 
 interface ContainerHeroProps {
@@ -29,6 +29,338 @@ const ContainerHero = styled.div<ContainerHeroProps>`
           `}
   }
 `;
+
+const list: MusicType[] = [
+  {
+    img: '/assets/single-los-angeles-sabran.png',
+    alt: 'lalalala',
+    title: 'Los angeles sabrán',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+      {
+        type: 'youtube',
+        link: 'https://youtube.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+  {
+    img: '/assets/single-mil-sitios-un-lugar.png',
+    alt: 'lalalala',
+    title: 'Mil sitios, un hogar',
+    year: '2022',
+    type: 'single',
+    actions: [
+      {
+        type: 'spotify',
+        link: 'https://spotify.com',
+      },
+    ],
+  },
+];
 
 const HomePage: NextPage<HomePageProps> = () => {
   const { musicActive, contactActive } = useContext(SliderContext);
@@ -49,7 +381,7 @@ const HomePage: NextPage<HomePageProps> = () => {
       <ContainerHero show={setActive()}>
         <SliderHero />
       </ContainerHero>
-      <Slider />
+      <Slider songList={list} />
     </Page>
   );
 };

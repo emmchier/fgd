@@ -15,7 +15,7 @@ const sizeStyles = (size: string) =>
       // paddings 0.625rem(10px) left-right + 0.5rem(8px) top-bottom
       font-size: ${({ theme }) => theme.font.body[3].size};
       line-height: ${({ theme }) => theme.font.body[3].lineHeight};
-      padding: ${({ theme }) => `${theme.spacing(1)} ${theme.spacing(3)}`};
+      padding: ${({ theme }) => `${theme.spacing(1)} ${theme.spacing(2.3)}`};
 
       svg {
         width: 16px;
@@ -247,10 +247,10 @@ export const ButtonContent = styled.button<ButtonProps>`
   }
 
   svg:nth-child(1) {
-    margin-right: ${({ iconRight }) => (iconRight ? '10px' : '0')};
+    margin-left: ${({ iconRight }) => (iconRight === true ? '10px' : '0')};
   }
 
   svg:nth-child(2) {
-    margin-left: ${({ iconLeft }) => (iconLeft ? '10px' : '0')};
+    margin-right: ${({ iconLeft }) => (iconLeft === true ? '10px' : '0')};
   }
 `;

@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const BannerContent = styled.div`
-  position: absolute;
+  display: none;
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    display: block;
     width: 100%;
     position: relative;
     z-index: 9;

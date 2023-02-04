@@ -21,3 +21,4 @@ export * from './banner';
 export * from './powered';
 export * from './copyright';
 export * from './hero';
+export * from './card';

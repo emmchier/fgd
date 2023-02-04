@@ -1,10 +1,13 @@
-export interface MusicTypes {
-  type: 'single' | 'album';
+export interface MusicType {
+  img: string;
+  alt: string;
   title: string;
   year: string;
-  img: string;
-  spotifyLink: string;
-  youtubeLink: string;
-  order: number;
-  lang: 'es' | 'en';
+  type: 'single' | 'album';
+  actions: SocialMediaType[];
+}
+
+export interface SocialMediaType {
+  type: 'spotify' | 'youtube';
+  link: string;
 }

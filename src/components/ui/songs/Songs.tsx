@@ -1,20 +1,36 @@
 import React, { FC } from 'react';
 
-import { SongsContent } from './SongsStyles';
+import { MusicType } from '../../../interfaces';
+
+import { Card, MusicSlideMobile } from '../../../components';
+
+import { SongsContent, SongsItem, MobileSlider } from './SongsStyles';
 
 interface SongsProps {
-  items: any[];
+  items: MusicType[];
 }
 
 export const Songs: FC<SongsProps> = ({ items = [] }) => {
   return (
-    <SongsContent>
-      <ul>
-        <li>Song</li>
-        <li>Song</li>
-        <li>Song</li>
-      </ul>
-      <span></span>
-    </SongsContent>
+    <>
+      <SongsContent>
+        {items?.map((music: MusicType) => (
+          <SongsItem key={music.title}>
+            <Card
+              img={music.img}
+              alt={music.alt}
+              title={music.title}
+              year={music.year}
+              type={music.type}
+              actions={music.actions}
+            />
+          </SongsItem>
+        ))}
+        {/* </div> */}
+      </SongsContent>
+      <MobileSlider>
+        <MusicSlideMobile items={items} />
+      </MobileSlider>
+    </>
   );
 };

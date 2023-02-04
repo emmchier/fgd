@@ -5,7 +5,7 @@ interface HeadingProps {
   size: 'title1' | 'title2' | 'title3';
   weight: 'regular' | 'medium' | 'semiBold' | 'bold' | 'extraBold';
   cap: 'default' | 'upper' | 'lower' | 'cap';
-  color: 'white' | 'black' | 'primary' | 'secondary' | 'error';
+  color: 'white' | 'black' | 'primary' | 'secondaryMain' | 'secondaryDark' | 'error';
 }
 
 const sizeStyles = (size: string) =>
@@ -30,7 +30,7 @@ const sizeStyles = (size: string) =>
     `,
     title3: css`
       font-size: ${({ theme }) => theme.font.title[3].size};
-      line-height: ${({ theme }) => theme.font.title[3].lineHeight};
+      line-height: ${({ theme }) => theme.font.body[1].lineHeight};
 
       @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
         font-size: ${({ theme }) => theme.font.body[1].size};
@@ -85,7 +85,10 @@ const colorStyles = (color: string) =>
     primary: css`
       color: ${({ theme }) => theme.color.primary.dark};
     `,
-    secondary: css`
+    secondaryMain: css`
+      color: ${({ theme }) => theme.color.secondary.main};
+    `,
+    secondaryDark: css`
       color: ${({ theme }) => theme.color.secondary.dark};
     `,
     error: css`
