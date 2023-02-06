@@ -87,11 +87,12 @@ export const theme = {
     main: '2.08748px 0px 12.5249px rgba(0, 0, 0, 0.15)',
   },
   transition: {
-    main: '0.1s ease-in-out',
+    main: 'all 0.1s ease-in-out',
   },
   border: {
     radius: {
       small: '4px',
+      medium: '8px',
       main: '12px',
       full: '50px',
     },

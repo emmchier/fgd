@@ -188,3 +188,24 @@ export const DisandevIsotype: FC<IconTypes> = ({ color = '#7C5020' }) => (
     </defs>
   </svg>
 );
+
+export const ChevronIcon: FC<IconTypes> = ({ color = '#000' }) => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect
+      x="11.9934"
+      y="21.7603"
+      width="2.75932"
+      height="13.7966"
+      transform="rotate(-135 11.9934 21.7603)"
+      fill={color}
+    />
+    <rect
+      x="21.7615"
+      y="11.9941"
+      width="2.75932"
+      height="13.7966"
+      transform="rotate(135 21.7615 11.9941)"
+      fill={color}
+    />
+  </svg>
+);

@@ -34,7 +34,7 @@ export const AsideInfo: FCC = ({ children }) => {
           </span>
         </BarLeft>
         {children}
-        <BarRight>
+        <BarRight isMusic={musicActive}>
           <SocialMediaContainer show={setActive()}>
             <Line width="2px" height="50px" />
             <SocialMedia />

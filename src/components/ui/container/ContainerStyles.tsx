@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 export interface ContainerProps {
   size: 'sm' | 'md' | 'lg' | 'none';
   isHome: boolean;
+  isMusic: boolean;
 }
 
 const styledSizes = (size: string) =>
@@ -53,8 +54,8 @@ const styledSizes = (size: string) =>
 export const ContainerContent = styled.div<ContainerProps>`
   width: auto;
   ${({ size }) => styledSizes(size)};
-  ${({ isHome }) =>
-    isHome === true
+  ${({ isHome, isMusic }) =>
+    isHome === true || isMusic === true
       ? css`
           padding: 0 !important;
         `

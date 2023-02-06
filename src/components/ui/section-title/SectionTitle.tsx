@@ -3,11 +3,9 @@ import { FCC } from '../../../types';
 import { Heading } from '../../../components';
 
 import { PageTitleContent } from './SectionTitleStyles';
-import { useContext } from 'react';
-import { SliderContext } from '../../../context';
 
 interface PageTitleProps {
-  color?: 'white' | 'black' | 'primary' | 'secondary' | 'error';
+  color?: 'white' | 'black' | 'primary' | 'secondaryMain' | 'secondaryDark' | 'error';
   variant?: 'h1' | 'h2';
   weight?: 'regular' | 'medium' | 'semiBold' | 'bold' | 'extraBold';
 }
@@ -18,10 +16,8 @@ export const PageTitle: FCC<PageTitleProps> = ({
   color = 'primary',
   weight = 'extraBold',
 }) => {
-  const { homeActive } = useContext(SliderContext);
-
   return (
-    <PageTitleContent isHome={homeActive === true && true}>
+    <PageTitleContent>
       <Heading variant={variant} color={color} weight={weight} cap="upper">
         {children}
       </Heading>

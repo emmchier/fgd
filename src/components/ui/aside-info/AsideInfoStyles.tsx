@@ -1,4 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+interface BarRightProps {
+  isMusic?: boolean;
+}
 
 export const AsideContent = styled.div`
   width: 100%;
@@ -27,7 +31,7 @@ export const BarLeft = styled.aside`
   }
 `;
 
-export const BarRight = styled.aside`
+export const BarRight = styled.aside<BarRightProps>`
   width: 20px;
   height: 100vh;
   display: flex;
@@ -57,5 +61,11 @@ export const BarRight = styled.aside`
     z-index: 0;
     transform: translateX(-20px);
     right: 0;
+
+    ${({ isMusic }) =>
+      isMusic === true &&
+      css`
+        display: none;
+      `}
   }
 `;

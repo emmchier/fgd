@@ -78,20 +78,33 @@ export const InputContent = styled.div`
 
 export const InputField = styled.input`
   width: 100%;
-  overflow: hidden;
-  color: ${({ theme }) => theme.color.black};
-  padding-left: ${({ theme }) => theme.spacing(5)};
-  font-style: normal;
-  font-weight: ${({ theme }) => theme.font.weight.regular};
+  height: 45px;
+  color: ${({ theme }) => theme.color.secondary.dark};
+  padding-left: ${({ theme }) => theme.spacing(3)} !important;
+  border: 2px solid ${({ theme }) => theme.color.secondary.light};
+  border-radius: ${({ theme }) => theme.border.radius.medium};
   font-size: ${({ theme }) => theme.font.body[1].size};
   line-height: ${({ theme }) => theme.font.body[1].lineHeight};
+  font-weight: ${({ theme }) => theme.font.weight.regular} !important;
+  background: transparent;
+  transition: ${({ theme }) => theme.transition.main};
+  overflow: hidden;
   padding: 0;
-  background-color: ${({ theme }) => theme.color.white};
-  border: transparent;
-  border-bottom: 2px solid ${({ theme }) => theme.color.black};
+
+  &:empty {
+    border: 2px solid ${({ theme }) => theme.color.secondary.light};
+    background: transparent;
+    outline: none;
+  }
+
+  &:hover {
+    background: ${({ theme }) => theme.color.background.light};
+    transition: ${({ theme }) => theme.transition.main};
+  }
+
   &:focus {
-    border-bottom: 2px solid ${({ theme }) => theme.color.primary.main};
-    background-color: ${({ theme }) => theme.color.white};
+    border: 2px solid ${({ theme }) => theme.color.primary.main};
+    background: ${({ theme }) => theme.color.white};
     outline: none;
   }
 `;
@@ -117,26 +130,44 @@ export const TextareaContent = styled.div`
 `;
 
 export const TextareaField = styled.textarea`
-  resize: none;
   width: 100%;
-  margin: 0;
-  padding: 0;
-  max-height: ${({ theme }) => theme.spacing(40)};
-  transition: ${({ theme }) => theme.transition.main};
-  color: ${({ theme }) => theme.color.black};
-  font-style: normal;
-  font-weight: ${({ theme }) => theme.font.weight.regular};
+  height: 45px;
+  max-height: ${({ theme }) => theme.spacing(30)};
+  color: ${({ theme }) => theme.color.secondary.dark};
+  padding-left: ${({ theme }) => theme.spacing(3)} !important;
+  border: 2px solid ${({ theme }) => theme.color.secondary.light};
+  border-radius: ${({ theme }) => theme.border.radius.medium};
   font-size: ${({ theme }) => theme.font.body[1].size};
-  line-height: ${({ theme }) => theme.font.body[1].size};
-  background-color: ${({ theme }) => theme.color.white};
-  border: none;
-  border-bottom: 2px solid ${({ theme }) => theme.color.black};
-  &:focus {
-    border-bottom: 2px solid ${({ theme }) => theme.color.primary.main};
-    background-color: ${({ theme }) => theme.color.white};
-    /* padding: ${({ theme }) => theme.spacing(3)} 0; */
+  line-height: ${({ theme }) => theme.font.body[1].lineHeight};
+  font-weight: ${({ theme }) => theme.font.weight.regular} !important;
+  background: transparent;
+  transition: ${({ theme }) => theme.transition.main};
+  resize: none;
+  margin: 0;
+
+  &:not(:placeholder-shown) {
+    border: 2px solid ${({ theme }) => theme.color.primary.main};
+    background: ${({ theme }) => theme.color.white};
     outline: none;
   }
+
+  &:empty {
+    border: 2px solid ${({ theme }) => theme.color.secondary.light};
+    background: transparent;
+    outline: none;
+  }
+
+  &:hover {
+    background: ${({ theme }) => theme.color.background.light};
+    transition: ${({ theme }) => theme.transition.main};
+  }
+
+  &:focus {
+    border: 2px solid ${({ theme }) => theme.color.primary.main};
+    background: ${({ theme }) => theme.color.white};
+    outline: none;
+  }
+
   ::-webkit-scrollbar {
     width: ${({ theme }) => theme.spacing(2.5)};
     cursor: pointer;
@@ -146,13 +177,14 @@ export const TextareaField = styled.textarea`
   }
   ::-webkit-scrollbar-thumb {
     border-radius: ${({ theme }) => theme.spacing(5)};
-    background: transparent;
+    background: red;
     cursor: pointer;
   }
   ::-webkit-scrollbar-thumb:window-inactive {
     background: transparent;
     cursor: pointer;
   }
+
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     max-height: ${({ theme }) => theme.spacing(70)};
     ::-webkit-scrollbar {

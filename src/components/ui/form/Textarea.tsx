@@ -29,6 +29,7 @@ export const Textarea: FC<TextareaI> = ({ label, name, value, onChange, onBlur, 
         onBlur={onBlur}
         required={required}
         ref={textAreaRef}
+        rows={8}
       />
     </TextareaContent>
   );

@@ -26,7 +26,6 @@ export const Songs: FC<SongsProps> = ({ items = [] }) => {
             />
           </SongsItem>
         ))}
-        {/* </div> */}
       </SongsContent>
       <MobileSlider>
         <MusicSlideMobile items={items} />

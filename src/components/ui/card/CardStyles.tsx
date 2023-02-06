@@ -9,6 +9,12 @@ export const CardContent = styled.article`
   overflow: hidden;
   display: flex;
   align-items: center;
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    flex-direction: column;
+    margin: ${({ theme }) => theme.spacing(6)} ${({ theme }) => theme.spacing(4)}
+      ${({ theme }) => theme.spacing(8)};
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -23,6 +29,15 @@ export const ImageContainer = styled.div`
     filter: grayscale();
     object-fit: contain !important;
   }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    height: 23vh;
+    width: 100%;
+
+    img {
+      object-fit: cover !important;
+    }
+  }
 `;
 
 export const InfoContainer = styled.div`
@@ -33,6 +48,18 @@ export const InfoContainer = styled.div`
   justify-content: space-between;
   flex-direction: column;
   margin-left: ${({ theme }) => theme.spacing(4)};
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    width: 100%;
+    height: 22vh;
+    margin-left: 0;
+    margin-top: ${({ theme }) => theme.spacing(4)};
+
+    p {
+      font-size: ${({ theme }) => theme.font.body[3].size};
+      line-height: ${({ theme }) => theme.font.body[3].lineHeight};
+    }
+  }
 `;
 
 export const TitlesContainer = styled.div`
@@ -40,6 +67,10 @@ export const TitlesContainer = styled.div`
 
   p {
     margin-top: ${({ theme }) => theme.spacing(1)};
+
+    @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+      margin-bottom: ${({ theme }) => theme.spacing(4)};
+    }
   }
 `;
 
@@ -57,5 +88,19 @@ export const ActionsContainer = styled.div`
     margin: 0;
     padding: 0;
     width: 100%;
+  }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    a {
+      width: 100% !important;
+
+      button {
+        width: 100% !important;
+      }
+
+      &:nth-child(2) {
+        margin-left: ${({ theme }) => theme.spacing(3.5)};
+      }
+    }
   }
 `;

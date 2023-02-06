@@ -37,12 +37,14 @@ export const ExpandibleSection = styled.section<ItemTypes>`
 `;
 
 export const FormContainer = styled.div`
-  width: 100%;
+  width: 70%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-left: ${({ theme }) => theme.spacing(40)};
 
-  form {
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     width: 100%;
+    margin-left: 0;
   }
 `;

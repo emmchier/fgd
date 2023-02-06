@@ -37,52 +37,60 @@ export const SongsItem = styled.li`
 export const MobileSlider = styled.div`
   display: none;
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    position: relative;
     display: flex;
-    height: 50%;
+    flex-direction: column;
 
     .swiper {
       width: 100%;
       height: 100%;
     }
 
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: white;
-
-      /* Center slide text vertically */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      background: red;
-    }
-
     .swiper-pagination {
-      position: fixed;
-      bottom: 30vh;
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .swiper-pagination-bullet {
-      width: 20px;
-      height: 20px;
+      width: ${({ theme }) => theme.spacing(3)};
+      height: ${({ theme }) => theme.spacing(3)};
+      border-radius: ${({ theme }) => theme.border.radius.small};
       text-align: center;
       line-height: 20px;
       font-size: 12px;
-      color: #000;
       opacity: 1;
-      background: rgba(0, 0, 0, 0.2);
+      background: ${({ theme }) => theme.color.background.dark};
     }
 
     .swiper-pagination-bullet-active {
-      color: #fff;
-      background: #007aff;
+      width: ${({ theme }) => theme.spacing(4)};
+      height: ${({ theme }) => theme.spacing(4)};
+      background: ${({ theme }) => theme.color.primary.light};
+      border-radius: ${({ theme }) => theme.border.radius.small};
     }
+  }
+`;
+
+export const LimitedPagination = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-20px);
+  position: relative;
+  z-index: 9999999999999;
+
+  div {
+    margin-right: ${({ theme }) => theme.spacing(1.5)};
+  }
+
+  span {
+    margin-left: ${({ theme }) => theme.spacing(1.5)};
+    background: ${({ theme }) => theme.color.background.dark};
+    border-radius: ${({ theme }) => theme.border.radius.full};
+    padding: ${({ theme }) => theme.spacing(1)} ${({ theme }) => theme.spacing(3)};
   }
 `;

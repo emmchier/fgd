@@ -20,6 +20,16 @@ const sizeStyles = (size: string) =>
       svg {
         width: 16px;
         height: 16px;
+        margin-right: ${({ theme }) => theme.spacing(1)};
+
+        @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+        padding: ${({ theme }) => `${theme.spacing(2)} ${theme.spacing(2.3)}`};
       }
     `,
     medium: css`

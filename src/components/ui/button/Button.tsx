@@ -14,6 +14,7 @@ interface ButtonTypes {
   iconRight?: boolean;
   iconLeft?: boolean;
   icon?: React.ReactNode;
+  classes?: string;
   onClick?: (e: any) => any;
 }
 
@@ -28,6 +29,7 @@ export const Button: FCC<ButtonTypes> = ({
   iconRight = false,
   iconLeft = false,
   icon = <SpotifyIcon />,
+  classes = '',
   onClick,
 }) => (
   <ButtonContent
@@ -39,6 +41,7 @@ export const Button: FCC<ButtonTypes> = ({
     ariaLabel={ariaLabel}
     iconRight={iconRight}
     iconLeft={iconLeft}
+    className={classes}
     onClick={onClick}
   >
     {iconLeft && icon}

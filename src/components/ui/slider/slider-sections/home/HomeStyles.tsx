@@ -1,9 +1,23 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const MainInfoContainer = styled.div`
+interface MainInfoContainerProps {
+  isActive?: boolean;
+}
+
+export const MainInfoContainer = styled.div<MainInfoContainerProps>`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    ${({ isActive }) =>
+      isActive === true &&
+      css`
+        span {
+          margin-left: ${({ theme }) => theme.spacing(5)};
+        }
+      `}
+  }
 `;
 
 export const SingingHousesBanner = styled.div`

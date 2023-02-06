@@ -10,10 +10,14 @@ interface ContainerTypes {
 }
 
 export const Container: FCC<ContainerTypes> = ({ children, size = 'lg' }) => {
-  const { homeActive } = useContext(SliderContext);
+  const { homeActive, musicActive } = useContext(SliderContext);
 
   return (
-    <ContainerContent isHome={homeActive === true && true} size={size}>
+    <ContainerContent
+      isHome={homeActive === true && true}
+      isMusic={musicActive === true && true}
+      size={size}
+    >
       {children}
     </ContainerContent>
   );

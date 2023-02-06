@@ -24,7 +24,7 @@ export const Heading: FCC<HeadingTypes> = ({
   size = 'title1',
   weight = 'medium',
   cap = 'default',
-  color = 'secondary',
+  color = 'secondaryDark',
 }) => {
   const setVariant = () => {
     switch (variant) {
